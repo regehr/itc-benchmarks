@@ -5,7 +5,6 @@ AC_PREREQ([2.69])
 AC_INIT([itc-benchmarks], [1.0], [https://github.com/regehr/itc-benchmarks/issues])
 AC_CONFIG_SRCDIR([01.w_Defects/memory_leak.c])
 AM_INIT_AUTOMAKE
-AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([
 Makefile
 01.w_Defects/Makefile
