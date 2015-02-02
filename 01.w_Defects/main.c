@@ -6,58 +6,6 @@
 
 #include "HeaderFile.h"
 
-extern void bit_shift_main (void);
-extern void dynamic_buffer_overrun_main (void);
-extern void dynamic_buffer_underrun_main (void);
-extern void cmp_funcadr_main (void);
-extern void conflicting_cond_main (void);
-extern void data_lost_main (void);
-extern void data_overflow_main (void);
-extern void data_underflow_main (void);
-extern void dead_code_main (void);
-extern void dead_lock_main (void);
-extern void deletion_of_data_structure_sentinel_main (void);
-extern void double_free_main (void);
-extern void double_lock_main (void);
-extern void double_release_main (void);
-extern void endless_loop_main (void);
-extern void free_nondynamic_allocated_memory_main (void);
-extern void free_null_pointer_main (void);
-extern void func_pointer_main (void);
-extern void function_return_value_unchecked_main (void);
-extern void improper_termination_of_block_main (void);
-extern void insign_code_main (void);
-extern void invalid_extern_main (void);
-extern void invalid_memory_access_main (void);
-extern void littlemem_st_main (void);
-extern void livelock_main (void);
-extern void lock_never_unlock_main  (void);
-extern void memory_allocation_failure_main(void);
-extern void memory_leak_main (void);
-extern void not_return_main (void);
-extern void null_pointer_main (void);
-extern void overrun_st_main (void);
-extern void ow_memcpy_main (void);
-extern void pow_related_errors_main (void);
-extern void ptr_subtraction_main (void);
-extern void race_condition_main (void);
-extern void redundant_cond_main (void);
-extern void return_local_main (void);
-extern void sign_conv_main (void);
-extern void sleep_lock_main (void);
-extern void st_cross_thread_access_main (void);
-extern void st_overflow_main (void);
-extern void st_underrun_main (void);
-extern void underrun_st_main (void);
-extern void uninit_memory_access_main (void);
-extern void uninit_pointer_main (void);
-extern void uninit_var_main (void);
-extern void unlock_without_lock_main (void);
-extern void unused_var_main (void);
-extern void wrong_arguments_func_pointer_main (void);
-extern void zero_division_main (void);
-
-
 volatile int vflag;
 volatile int vflag_copy;
 volatile int vflag_file;

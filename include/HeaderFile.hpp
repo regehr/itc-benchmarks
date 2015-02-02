@@ -12,5 +12,6 @@
 #include<string.h>
 #include<pthread.h>
 
-extern void improper_error_handling_main();
+void improper_error_handling_main();
+
 #endif /* HEADERFILE_HPP_ */

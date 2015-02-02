@@ -12,7 +12,6 @@
 
 #include"HeaderFile.hpp"
 
-
 volatile int vflag;
 volatile int vflag_copy;
 volatile int vflag_file;
