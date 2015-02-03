@@ -8,6 +8,7 @@
 * Description: Defect Free Code to identify false positives to identify the unused variable in a function
 */
 
+#include "HeaderFile.h"
 
 /*
  * Types of defects: unused variable

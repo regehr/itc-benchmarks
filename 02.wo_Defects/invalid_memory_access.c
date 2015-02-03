@@ -180,7 +180,7 @@ void invalid_memory_access_006 ()
 	{
 		*((*pbuf[i])+j)=5.0;
 	}
-	if(pbuf !=NULL && buf2!= NULL )
+	if(buf2 != NULL )
 	*((*pbuf[1])+1) =buf2[0]; /*Tool should not detect this line as error*/ /*No ERROR:Invalid memory access to already freed area*/
 	if(buf1 != NULL)
 	free(buf1);

@@ -557,7 +557,7 @@ void func_pointer_014 ()
 
 void func_pointer_015_func_001(func_pointer_015_s_001* st)
 {
-    memset(st, 0, sizeof(st));
+    memset(st, 0, sizeof(*st));
     st->a = 1;
     global_set = 1;
 }

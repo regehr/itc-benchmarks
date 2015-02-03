@@ -10,8 +10,6 @@
 
 #include "HeaderFile.h"
 
-#define NULL ((void *)0)
-
 #if defined(CHECKER_POLYSPACE)
 int rand (void);
 #endif /* defined(CHECKER_POLYSPACE) */
