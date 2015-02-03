@@ -8,7 +8,6 @@
 */
 
 #include "HeaderFile.h"
-#define NULL ((void *)0)
 
 /*
  * Types of defects: comparing function addresses with NULL
