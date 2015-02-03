@@ -369,7 +369,7 @@ void race_condition_008 ()
 	   long int t2 = 20;
 	   pthread_create(&th1, NULL, race_condition_008_tsk_001, (void *)t1);
 	   pthread_create(&th2, NULL, race_condition_008_tsk_002, (void *)t2);
-	   sleep(0.1);
+	   sleep(1);
 #endif /* defined(CHECKER_POLYSPACE) */
 }
 

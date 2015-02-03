@@ -296,7 +296,7 @@ void unlock_without_lock_004 ()
 	long int t2 = 20;
     pthread_create(&th1, NULL, unlock_without_lock_004_tsk_001, (void *)t1);
     pthread_create(&th2, NULL, unlock_without_lock_004_tsk_002, (void *)t2);
-	sleep(0.1);
+	sleep(1);
 #endif /* defined(CHECKER_POLYSPACE) */
 }
 
@@ -414,7 +414,7 @@ void unlock_without_lock_006 ()
 	{
 		pthread_create(&th1, NULL, unlock_without_lock_006_tsk_001, (void *)t1);
 		pthread_create(&th2, NULL, unlock_without_lock_006_tsk_002, (void *)t2);
-		sleep(0.1);
+		sleep(1);
 	}
 
 #endif /* defined(CHECKER_POLYSPACE) */

@@ -522,7 +522,7 @@ void st_cross_thread_access_006 ()
 	   {
 		   pthread_create(&th1, NULL, st_cross_thread_access_006_tsk_001, (void *)t1);
 		   pthread_create(&th2, NULL, st_cross_thread_access_006_tsk_002, (void *)t2);
-		   sleep(0.1);
+		   sleep(1);
 	   }
 
 #endif /* defined(CHECKER_POLYSPACE) */
