@@ -20,6 +20,7 @@ void st_overflow_001 ()
 {
 	double buf[1048576];/* 1MB bytes */ /*Tool should detect this line as error*/ /*ERROR:Stack overflow*/
 	buf[0] = 1.0;
+        sink = buf[idx];
 }
 
  /*
@@ -75,6 +76,7 @@ void st_overflow_003_func_001 (st_overflow_003_s_001 s)
 	char buf[524288];					/* 512 Kbytes */ /*Tool should detect this line as error*/ /*ERROR:Stack overflow*/
 	s.buf[0] = 1;
 	buf[0] = 1;
+        sink = buf[idx];
 }
 
 void st_overflow_003 ()
@@ -105,6 +107,7 @@ void st_overflow_004_func_002 (st_overflow_004_s_001 s)
 	char buf[131072];					/* 128 Kbytes */
 	s.buf[0] = 1;
 	buf[0] = 1;
+        sink = buf[idx];
 }
 
 void st_overflow_004_func_001 (st_overflow_004_s_001 s)
@@ -112,6 +115,7 @@ void st_overflow_004_func_001 (st_overflow_004_s_001 s)
 	char buf[131072];                 /* 128 Kbytes *//*Tool should detect this line as error*/ /*ERROR:Stack overflow*/
 	buf[0] = 1;
 	st_overflow_004_func_002(s);
+        sink = buf[idx];
 }
 
 void st_overflow_004 ()
@@ -150,6 +154,7 @@ void st_overflow_005 ()
 	st_overflow_005_s_001 s;
 	st_overflow_005_func_001(s, 10);
 	buf[0] = 1;
+        sink = buf[idx];
 }
 
 /*
@@ -173,6 +178,7 @@ void st_overflow_006_func_001 (st_overflow_006_s_001 s)
 	char buf[524288];	 /* 512 Kbytes */
 	buf[1] = 10;
 	s.buf[0] = 1;/*Tool should detect this line as error*/ /*ERROR:Stack overflow*/
+        sink = buf[idx];
 }
 
 void st_overflow_006 ()
@@ -206,6 +212,7 @@ void st_overflow_007_func_001 (st_overflow_007_s_001 s)
 	s.buf[0] = 1;
 	buf[0] = 1;
 	st_overflow_007_func_002(s);
+        sink = buf[idx];
 }
 
 void st_overflow_007_func_002 (st_overflow_007_s_001 s)
@@ -213,6 +220,7 @@ void st_overflow_007_func_002 (st_overflow_007_s_001 s)
 	char buf[262144];	/* 256 Kbytes */
 	buf[0] = 1;
 	s.buf[0] = 1;/*Tool should detect this line as error*/ /*ERROR:Stack overflow*/
+        sink = buf[idx];
 }
 
 void st_overflow_007 ()

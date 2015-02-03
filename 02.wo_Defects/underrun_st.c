@@ -19,6 +19,7 @@ void underrun_st_001 ()
 	int buf[5] = {1, 2, 3, 4, 5};
 	int ret;
 	ret = buf[0]; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
+        sink = ret;
 }
 
 /*
@@ -29,6 +30,7 @@ void underrun_st_002 ()
 {
 	int buf[5];
 	buf[0] = 1; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
+        sink = buf[idx];
 }
 
 /*
@@ -40,6 +42,7 @@ void underrun_st_003 ()
 	int buf[5];
 	int index = 0;
 	buf[index] = 1; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
+        sink = buf[idx];
 }
 
 /*
@@ -53,6 +56,7 @@ void underrun_st_004 ()
 	int ret;
 	p = &buf[1];
 	ret = *(p - 1); /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
+        sink = ret;
 }
 
 /*
@@ -92,6 +96,7 @@ void underrun_st_007 ()
 	{
 		buf[i] = 1; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
 	}
+        sink = buf[idx];
 }
 
 /*

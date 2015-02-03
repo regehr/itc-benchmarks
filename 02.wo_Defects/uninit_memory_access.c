@@ -165,10 +165,11 @@ void uninit_memory_access_007_func_003(uninit_memory_access_007_s_001 *st)
 
 void uninit_memory_access_007_func_004(int num)
 {
-    int temp;
+  int temp = 0;
     if(num != 0) {
         temp = num;
     }
+    sink = temp;
 }
 void uninit_memory_access_007 ()
 {
@@ -426,7 +427,7 @@ uninit_memory_access_014_u_001 * uninit_memory_access_014_func_001 ()
 
 void uninit_memory_access_014 ()
 {
-	int ret;
+  int ret = 0;
 	uninit_memory_access_014_u_001 *p;
 	p = uninit_memory_access_014_func_001 ();
 	if(p != NULL)
@@ -435,6 +436,7 @@ void uninit_memory_access_014 ()
 	    free(p);
 	    p= NULL;
 	}
+        sink = ret;
 }
 
 /*

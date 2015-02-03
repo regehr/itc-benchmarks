@@ -135,6 +135,7 @@ void st_underrun_004 ()
 {
 	st_underrun_004_s_001 s,s2;
 	s2 = st_underrun_004_func_001(&s);
+        sink = s2.buf[0];
 }
 
 /*
@@ -169,6 +170,7 @@ void st_underrun_005 ()
 	strcpy(s.buf,"STRING !");
 	st_underrun_005_func_001(s,8);
 	buf[0] = s.buf[1];
+        sink = buf[0];
 }
 
 /*
@@ -189,13 +191,14 @@ void st_underrun_006_func_001 (st_underrun_006_s_001 s)
 {
 
 	 int len = strlen(s.buf) - 1;
-	 char c;
+	 char c = 0;
 	 for (;s.buf[len] != 'Z';len--) /*Tool should not detect this line as error*/ /* No Stack Under RUN error */
 	 {
          c = s.buf[len];
 		 if ( len < 0 )
 			 break;
 	 }
+         sink = c;
 }
 
 void st_underrun_006 ()
@@ -223,13 +226,14 @@ typedef struct {
 void st_underrun_007_func_001 (st_underrun_007_s_001 *s)
 {
 	 int len = strlen(s->buf) - 1;
-	 char c;
+	 char c = 0;
 	 for (;s->buf[len] != 'Z';len--)  
 	 {
         c = s->buf[len]; /*Tool should not detect this line as error*/ /* No Stack Under RUN error */
 		 if ( len < 0 )
 			 break;
 	 }
+         sink = c;
 }
 
 void st_underrun_007_func_002 (st_underrun_007_s_001 s)

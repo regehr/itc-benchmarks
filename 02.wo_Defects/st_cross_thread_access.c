@@ -121,7 +121,7 @@ void * st_cross_thread_access_002_tsk_001 (void * pram)
 {
 #if !defined(CHECKER_POLYSPACE)
 	int arr[5] = {10,20,30,40,50};
-	if(st_cross_thread_access_002_var == (int)pram)
+	if(st_cross_thread_access_002_var == (intptr_t)pram)
 	{
 		pthread_mutex_lock(&st_cross_thread_access_002_glb_mutex);
 	    st_cross_thread_access_002_glb_data = (st_cross_thread_access_002_glb_data % 100) + 1;
@@ -129,7 +129,7 @@ void * st_cross_thread_access_002_tsk_001 (void * pram)
 		*st_cross_thread_access_002_glb_ptr = 200.0;
 		pthread_mutex_unlock(&st_cross_thread_access_002_glb_mutex);
 	}
-	if(st_cross_thread_access_002_var == (int)pram)
+	if(st_cross_thread_access_002_var == (intptr_t)pram)
 	{
 		pthread_mutex_lock(&st_cross_thread_access_002_glb_mutex);
 	    st_cross_thread_access_002_glb_data = (st_cross_thread_access_002_glb_data % 100) + 1;
@@ -146,14 +146,14 @@ void * st_cross_thread_access_002_tsk_001 (void * pram)
 void * st_cross_thread_access_002_tsk_002 (void * pram)
 {
 #if !defined(CHECKER_POLYSPACE)
-	if(st_cross_thread_access_002_var == (int)pram)
+	if(st_cross_thread_access_002_var == (intptr_t)pram)
 	{
 		pthread_mutex_lock(&st_cross_thread_access_002_glb_mutex_1);
 	    st_cross_thread_access_002_glb_data = (st_cross_thread_access_002_glb_data % 100) + 1;
 	     /**st_cross_thread_access_002_glb_ptr = 200.0;*/ /*Tool should not detect this line as error*/ /*No ERROR:Cross thread stack access error*/
 	    pthread_mutex_unlock(&st_cross_thread_access_002_glb_mutex_1);
 	}
-	if(st_cross_thread_access_002_var == (int)pram)
+	if(st_cross_thread_access_002_var == (intptr_t)pram)
 	{
 		pthread_mutex_lock(&st_cross_thread_access_002_glb_mutex_1);
 	    st_cross_thread_access_002_glb_data = (st_cross_thread_access_002_glb_data % 100) + 1;
@@ -223,7 +223,7 @@ void * st_cross_thread_access_003_tsk_001 (void *pram)
         st_cross_thread_access_003_glb_data = (st_cross_thread_access_003_glb_data) + 1.2;
         st_cross_thread_access_003_glb_ptr = &fptr;
 #if defined PRINT_DEBUG
-	    int ip = (int)pram;
+	    intptr_t ip = (intptr_t)pram;
 	    printf("Task3! Cross thread stack access, thread # %d! gbl3 = %f \n",ip ,st_cross_thread_access_003_glb_data);
 #endif /* defined(PRINT_DEBUG) */
     	pthread_mutex_unlock (&st_cross_thread_access_003_glb_mutex);

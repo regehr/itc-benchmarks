@@ -12,6 +12,7 @@ volatile int vflag_file;
 
 int idx, sink;
 double dsink;
+void *psink;
 
 int main(int argc,char*argv[])
 {

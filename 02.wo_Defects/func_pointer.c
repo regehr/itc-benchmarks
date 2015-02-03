@@ -36,6 +36,7 @@ void func_pointer_001_func_001 ()
 {
 	int a ;
 	a =10;
+        sink = a;
 }
 
 void func_pointer_001 ()
@@ -62,6 +63,7 @@ void func_pointer_002 ()
 	int a;
 	fptr = func_pointer_002_func_001; 
 	a =fptr(buf[0]);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
+        sink = a;
 }
 
 /*
@@ -83,6 +85,7 @@ void func_pointer_003 ()
 		func = func_pointer_003_func_001; 
 		ret = func(1, 2);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
 	}
+        sink = ret;
 }
 
 /*
@@ -127,6 +130,7 @@ void func_pointer_004 ()
             char *(*fptr)(char *);
             fptr = func_pointer_004_func_001; 
             str = fptr(buf[j]);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
+            psink = str;
         }
     }
 }
@@ -290,6 +294,7 @@ void func_pointer_007 ()
 	int a;
 	fptr = func_pointer_007_func_001; 
 	a =fptr(buf);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
+        sink = a;
 }
 
 /*
@@ -351,7 +356,7 @@ func_pointer_009_u_001 * func_pointer_009_func_001 (void)
 
 void func_pointer_009 ()
 {
- 	int ret;
+        int ret = 0;
 	func_pointer_009_u_001 *p;
 	func_pointer_009_u_001 *(*fptr)(); 
 	fptr = func_pointer_009_func_001;
@@ -362,6 +367,7 @@ void func_pointer_009 ()
 	   free(p);
 	}
 	p= NULL;
+        sink = ret;
 }
 
 /*
@@ -372,6 +378,7 @@ void func_pointer_010_func_001 ()
 {
 	int a;
 	a= 10;
+        sink = a;
 }
 
 void func_pointer_010 ()
@@ -432,6 +439,7 @@ void func_pointer_011 ()
             fptr1 = fptr;
             fptr2 = fptr1;
             str = fptr2(buf[j]);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
+            psink = str;
         }
     }
  }
@@ -515,6 +523,7 @@ void func_pointer_013 ()
     int (*func_gbl)(int );
     func_gbl = func_pointer_013_func_002;
     flag = func_gbl(1);
+    sink = flag;
 }
 
 
@@ -563,6 +572,7 @@ void func_pointer_014 ()
     int (*fptr)(int);
     fptr =func_pointer_014_func_002;
     flag = fptr(1);
+    sink = flag;
 }
 
 /*

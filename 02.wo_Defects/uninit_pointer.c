@@ -27,6 +27,7 @@ void uninit_pointer_001 ()
 	int *p = &a;
 	int ret;
 	ret = *p; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized pointer*/
+        sink = ret;
 }
 
 /*
@@ -53,6 +54,7 @@ void uninit_pointer_003 ()
 	p = &a;
 	pp = &p;
 	ret = **pp; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized pointer*/
+        sink = ret;
 }
 
 /*
@@ -63,6 +65,7 @@ void uninit_pointer_004_func_001 (int *p)
 {
 	int ret=10;
 	*p = ret;
+        sink = ret;
 }
 void uninit_pointer_004 ()
 {
@@ -89,6 +92,7 @@ void uninit_pointer_005_func_001 (int *pbuf[])
 	pbuf[4] = buf5;
 	int ret;
 	ret = pbuf[1][1];
+        sink = ret;
 
 }
 void uninit_pointer_005 ()
@@ -197,12 +201,13 @@ void uninit_pointer_010_func_001 (void * vptr)
     char * * cptr = (char * *)vptr;
     char * buf = "String";
     buf = (*cptr); /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized pointer*/
+    sink = buf[idx];
 }
 void uninit_pointer_010 ()
 {
     void *buf1;
 	buf1 = "String Test";
-    uninit_pointer_010_func_001(&buf1);
+    uninit_pointer_010_func_001(&buf1);    
 }
 
 /*
@@ -337,6 +342,8 @@ void uninit_pointer_014 ()
 	    r = *s; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized pointer*/
 	    free(s);
 	}
+        r.a = 0;
+        sink = r.a;
 }
 
 /*

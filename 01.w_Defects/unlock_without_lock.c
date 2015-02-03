@@ -92,13 +92,13 @@ int const unlock_without_lock_002_var = 10;
 void * unlock_without_lock_002_tsk_001 (void * pram)
 {
 #if !defined(CHECKER_POLYSPACE)
-	if(unlock_without_lock_002_var == (int)pram)
+	if(unlock_without_lock_002_var == (intptr_t)pram)
 	{
 		pthread_mutex_lock(&unlock_without_lock_002_glb_mutex);
 	    unlock_without_lock_002_glb_data = (unlock_without_lock_002_glb_data % 100) + 1;
 	    pthread_mutex_unlock(&unlock_without_lock_002_glb_mutex);
 	}
-	if(unlock_without_lock_002_var == (int)pram)
+	if(unlock_without_lock_002_var == (intptr_t)pram)
 	{
 		/*pthread_mutex_lock(&unlock_without_lock_002_glb_mutex);*/
 	    unlock_without_lock_002_glb_data = (unlock_without_lock_002_glb_data % 100) + 1;
@@ -164,7 +164,7 @@ void unlock_without_lock_003_func_001 (void *pram)
     unlock_without_lock_003_glb_data = (unlock_without_lock_003_glb_data) + 1.2;
 
 #if defined PRINT_DEBUG
-	int ip = (int)pram;
+	int ip = (intptr_t)pram;
 	printf("Task3! Unlock without Lock, thread # %d! gbl3 = %f \n",ip ,unlock_without_lock_003_glb_data);
 #endif /* defined(PRINT_DEBUG) */
 	unlock_without_lock_003_func_002(10);

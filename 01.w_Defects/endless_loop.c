@@ -24,6 +24,7 @@ void endless_loop_001 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -40,6 +41,7 @@ void endless_loop_002 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -55,6 +57,7 @@ void endless_loop_003 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -71,6 +74,7 @@ void endless_loop_004 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -91,6 +95,7 @@ void endless_loop_005 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -106,6 +111,7 @@ void endless_loop_006_func_001 (int flag)
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 void endless_loop_006 ()
@@ -127,6 +133,7 @@ void endless_loop_007 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -143,6 +150,7 @@ void endless_loop_008 ()
 		a ++; /*Tool should detect this line as error*/ /*ERROR:Unintentional end less loop*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -159,6 +167,7 @@ void endless_loop_009 ()
 	}
 	while (1);
 	ret = a;
+        sink = ret;
 }
 
 /*

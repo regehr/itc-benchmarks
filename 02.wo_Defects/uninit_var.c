@@ -20,6 +20,7 @@ void uninit_var_001 ()
 	int a = 0;
 	int ret;
 	ret = a; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Variable*/
+        sink = ret;
 }
 
 /*
@@ -31,6 +32,7 @@ void uninit_var_002 ()
 	int buf[5] = {1, 2, 3, 4, 5};
 	int ret;
 	ret = buf[3]; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Variable*/
+        sink = ret;
 }
 
 /*
@@ -46,6 +48,7 @@ void uninit_var_003 ()
 	                 {41,42,43,44,45,46}};
 	int ret;
 	ret = buf[1][1]; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Variable*/
+        sink = ret;
 }
 
 /*
@@ -63,6 +66,7 @@ void uninit_var_004 ()
     	dvar1 = 25.8;
     else
     	dvar = dvar1 = 2.2; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Variable*/
+    dsink = dvar;
 }
 
 /*
@@ -81,6 +85,7 @@ void uninit_var_005 ()
 {
 	int a;
 	a = uninit_var_005_func_001();
+        sink = a;
 }
 
 /*
@@ -112,6 +117,7 @@ void uninit_var_007 ()
 	s.b = 1;
 	s.uninit = 1;
 	ret = s.uninit; /*Tool should not detect this line as error*/ /*No ERROR:Uninitialized Variable*/
+        sink = ret;
 }
 
 /*
@@ -192,6 +198,7 @@ void uninit_var_011 ()
 	int arr[] = {1, 2, 3, 4, 5, 6};
 	int p ;
 	p= uninit_var_011_func_001(arr,(sizeof(arr)/sizeof(int)));
+        sink = p;
 }
 
 /*
@@ -235,6 +242,8 @@ void uninit_var_012 ()
 	ret = uninit_var_012_func_001 (s);
 	if(ret >=0)
 		r = s;
+        r.a = 0;
+        sink = r.a;
 }
 
 /*
@@ -256,6 +265,7 @@ void uninit_var_013 ()
 {
     int a;
     a = uninit_var_013_func_001();
+    sink = a;
 }
 
 /*
@@ -284,6 +294,8 @@ void uninit_var_014 ()
 	s.b = 1;
 	s.uninit = 1;
 	r = uninit_var_014_func_001(s);
+        r.a = 0;
+        sink = r.a;
 }
 
 /*

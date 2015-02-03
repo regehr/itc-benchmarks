@@ -422,6 +422,7 @@ void free_null_pointer_011 ()
 	p = free_null_pointer_011_func_001 ();
 	ret = p->b;
 	p = free_null_pointer_011_func_002 ();
+        sink = ret;
 }
 
 /*

@@ -54,7 +54,7 @@ void invalid_memory_access_001 ()
 
 void invalid_memory_access_002 ()
 {
-	double *ptr, *dptr,a;
+	double *ptr, *dptr = 0,a;
 	static int staticflag=100;
     if (staticflag == 10)
     	  	(ptr= (double*) malloc(10*sizeof(double)));
@@ -107,6 +107,7 @@ void invalid_memory_access_003 ()
 	    if(i>=10)
 	    	break;
 	}
+        psink = c;
 }
 
 /*
@@ -728,6 +729,7 @@ void invalid_memory_access_main ()
 	{
 		int i;
 		i = invalid_memory_access_014 (1);
+                sink = i;
 	}
 
 	if (vflag == 15 || vflag ==888)

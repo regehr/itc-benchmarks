@@ -56,7 +56,7 @@ void invalid_memory_access_001 ()
 
 void invalid_memory_access_002 ()
 {
-	double *ptr, *dptr,a;
+	double *ptr, *dptr = 0,a;
 	static int staticflag=10;
     if (staticflag == 10)
     	  	(ptr= (double*) malloc(10*sizeof(double)));
@@ -95,7 +95,7 @@ void invalid_memory_access_002 ()
 void invalid_memory_access_003 ()
 {
 	int i=1;
-	char *buf,*c;
+	char *buf,*c = 0;
 	while(i>0)
 	{
 		buf = (char *) malloc (25 * sizeof(char));
@@ -110,6 +110,7 @@ void invalid_memory_access_003 ()
 	    if(i>=10)
 	    	break;
 	}
+        psink = c;
 }
 
 /*
@@ -534,6 +535,7 @@ void invalid_memory_access_015 ()
         {
             char * str;
             str = invalid_memory_access_015_func_001(buf[j]);
+            psink = str;
         }
     }
 }
@@ -740,6 +742,7 @@ void invalid_memory_access_main ()
 	{
 		int i;
 		i = invalid_memory_access_014 (1);
+                sink = i;
 	}
 
 	if (vflag == 15 || vflag ==888)

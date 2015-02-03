@@ -387,6 +387,7 @@ label:
     {
         a=20;
     }
+    sink = a;
 }
 
 /*
@@ -410,6 +411,7 @@ void function_return_value_unchecked_015 ()
             break;
         }
     }
+        sink = i;
 }
 
 /*

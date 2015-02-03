@@ -16,6 +16,7 @@
 
 extern int idx, sink;
 extern double dsink;
+extern void *psink;
 
 void bit_shift_main (void);
 void dynamic_buffer_overrun_main (void);
