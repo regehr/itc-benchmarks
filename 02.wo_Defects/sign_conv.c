@@ -21,6 +21,7 @@ void sign_conv_001 ()
 	unsigned char a = 0x7f;
 	char ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -32,6 +33,7 @@ void sign_conv_002 ()
 	unsigned short a = 0x7fff;
 	short ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -43,6 +45,7 @@ void sign_conv_003 ()
 	unsigned int a = 0x7fffffff;
 	int ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -54,6 +57,7 @@ void sign_conv_004 ()
 	unsigned long a = 0x7fffffff;
 	long ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -65,6 +69,7 @@ void sign_conv_005 ()
 	char a = 0x7f;
 	unsigned char ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -76,6 +81,7 @@ void sign_conv_006 ()
 	short a = 0x7fff;
 	unsigned short ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -87,6 +93,7 @@ void sign_conv_007 ()
 	int a = 0x7fffffff;
 	unsigned int ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -98,6 +105,7 @@ void sign_conv_008 ()
 	long a = 0x7fffffff;
 	unsigned long ret;
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -140,6 +148,7 @@ void sign_conv_011 ()
 {
 	unsigned int ret;
 	ret = 0x7fffffff; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -155,6 +164,7 @@ void sign_conv_012 ()
 	a = rand();
 
 	ret = a; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -166,6 +176,7 @@ void sign_conv_013 ()
 	int a = -1;
 	unsigned int ret;
 	ret = (5 * a) + 6; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -177,6 +188,7 @@ void sign_conv_014 ()
 	int a = 2;
 	unsigned int ret;
 	ret = (a * a) - 3; /*Tool should not detect this line as error*/ /*NO ERROR : Integer sign lost because of unsigned cast */
+        sink = ret;
 }
 
 /*
@@ -231,6 +243,7 @@ void sign_conv_018 ()
 	unsigned int ret;
 	a1 = a;
 	ret = a1;
+        sink = ret;
 }
 
 /*
@@ -246,6 +259,7 @@ void sign_conv_019 ()
 	a1 = a;
 	a2 = a1;
 	ret = a2;
+        sink = ret;
 }
 
 /*

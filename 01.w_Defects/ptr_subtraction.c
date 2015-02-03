@@ -18,8 +18,9 @@ void ptr_subtraction_001 ()
 {
 	char buf1[5];
 	char buf2[5];
-	int offset;
+	intptr_t offset;
 	offset = buf2 - buf1; /*Tool should detect this line as error*/ /*ERROR:Incorrect pointer arithmetic*/
+        sink = offset;
 }
 
 /*

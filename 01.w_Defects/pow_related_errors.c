@@ -27,6 +27,7 @@ void pow_related_errors_001()
 	double exponent=10^37;
 	double ans;
 	ans=pow(num,exponent); /*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 
 }
 
@@ -41,6 +42,7 @@ void pow_related_errors_002()
 	int exponent=3;
 	double ans;
 	ans=pow(num,exponent); /*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 
 }
 
@@ -62,6 +64,7 @@ void pow_related_errors_002()
 		double temp=arr[i];
 		ans=pow(temp,exponent); /*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
 	}
+        dsink = ans;
 }
 
 /*
@@ -83,6 +86,7 @@ void pow_related_errors_004()
 		double temp=*(*arr2+i);
 		ans=pow(temp,exponent); /*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
 	}
+        dsink = ans;
 
 }
 
@@ -104,6 +108,7 @@ void pow_related_errors_005()
 		double temp=arr1[i];
 		ans=pow(temp,exponent); /*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
 	}
+        dsink = ans;
 }
 
 /*
@@ -124,6 +129,7 @@ void pow_related_errors_006()
 	double exponent=2;	
 	double ans;
 	ans=pow(pow_related_errors_006_func_001(),exponent); /*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 
 }
 
@@ -152,6 +158,7 @@ void pow_related_errors_007()
 	 ans1=pow(ptr_newarr->arr[0],newarr->arr[0]);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
 	free(newarr);
 	free(ptr_newarr);
+        dsink = ans + ans1;
 }
 
 /*
@@ -166,6 +173,7 @@ void pow_related_errors_008()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -180,6 +188,7 @@ void pow_related_errors_009()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -194,6 +203,7 @@ void pow_related_errors_010()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -208,6 +218,7 @@ void pow_related_errors_011()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -222,6 +233,7 @@ void pow_related_errors_012()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -236,6 +248,7 @@ void pow_related_errors_013()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -250,6 +263,7 @@ void pow_related_errors_014()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -264,6 +278,7 @@ void pow_related_errors_015()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -278,6 +293,7 @@ void pow_related_errors_016()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -292,6 +308,7 @@ void pow_related_errors_017()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -306,6 +323,7 @@ void pow_related_errors_018()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -320,6 +338,7 @@ void pow_related_errors_019()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -334,6 +353,7 @@ void pow_related_errors_020()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -348,6 +368,7 @@ void pow_related_errors_021()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -362,6 +383,7 @@ void pow_related_errors_022()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -376,6 +398,7 @@ void pow_related_errors_023()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -390,6 +413,7 @@ void pow_related_errors_024()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -404,6 +428,7 @@ void pow_related_errors_025()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -418,6 +443,7 @@ void pow_related_errors_026()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -432,6 +458,7 @@ void pow_related_errors_027()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -446,6 +473,7 @@ void pow_related_errors_028()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*
@@ -460,6 +488,7 @@ void pow_related_errors_029()
 
 	double ans;
 	ans=pow(base,exponent);/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
+        dsink = ans;
 }
 
 /*

@@ -222,11 +222,10 @@ void double_lock_004 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	   pthread_t th1,th2;
-	   int rc = 1;
 	   long int t1 = 10;
 	   long int t2 = 20;
-	   rc = pthread_create(&th1, NULL, Thread3, (void *)t1);
-	   rc = pthread_create(&th2, NULL, Thread4, (void *)t2);
+	   sink += pthread_create(&th1, NULL, Thread3, (void *)t1);
+	   sink += pthread_create(&th2, NULL, Thread4, (void *)t2);
 #endif /* defined(CHECKER_POLYSPACE) */
 }
 

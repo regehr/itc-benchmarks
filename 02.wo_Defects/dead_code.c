@@ -21,6 +21,7 @@ void dead_code_001 ()
 		a ++; /*Tool should not detect this line as error*/ /*No ERROR:Dead Code*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -37,6 +38,7 @@ void dead_code_002 ()
 		a ++; /*Tool should not detect this line as error*/ /*No ERROR:Dead Code*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -57,6 +59,7 @@ void dead_code_003 ()
 		a ++; /*Tool should not detect this line as error*/ /*No ERROR:Dead Code*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -72,6 +75,7 @@ void dead_code_004_func_001 (int flag)
 		a ++; /*Tool should not detect this line as error*/ /*No ERROR:Dead Code*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 void dead_code_004 ()
@@ -93,6 +97,7 @@ void dead_code_005 ()
 		a ++; /*Tool should not detect this line as error*/ /*No ERROR:Dead Code*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -109,6 +114,7 @@ void dead_code_006 ()
 		a ++; /*Tool should not detect this line as error*/ /*No ERROR:Dead Code*/
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -126,6 +132,7 @@ void dead_code_007 ()
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -142,6 +149,7 @@ void dead_code_008 ()
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -159,6 +167,7 @@ void dead_code_009 ()
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -180,6 +189,7 @@ void dead_code_010 ()
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -196,6 +206,7 @@ void dead_code_011_func_001 (int flag)
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 void dead_code_011 ()
@@ -218,6 +229,7 @@ void dead_code_012 ()
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*
@@ -235,6 +247,7 @@ void dead_code_013 ()
 		break;
 	}
 	ret = a;
+        sink = ret;
 }
 
 /*

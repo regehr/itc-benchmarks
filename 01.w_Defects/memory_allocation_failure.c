@@ -263,7 +263,7 @@ char * memory_allocation_failure_008_func_001 (const char *msg) {
        break;
   }
   if(buffer!=NULL)
-  snprintf(buffer, sizeof(buffer), "Error: %s", error_log);
+    snprintf(buffer, max_buffer * sizeof(char), "Error: %s", error_log);
   return buffer;
 }
 void memory_allocation_failure_008 ()
@@ -473,7 +473,7 @@ int memory_allocation_failure_013_func_001(int flag)
 void memory_allocation_failure_013 ()
 {
 	char  **dptr,a;
-	double *ptr,b;
+	double *ptr,b = 0.0;
 	int i;
 
 
@@ -516,6 +516,7 @@ void memory_allocation_failure_013 ()
     	dptr = NULL;
     }
     printf("%d",a);
+    sink = b;
 }
 
 /*
@@ -550,7 +551,7 @@ int (*memory_allocation_failure_014_func_001())[4]
 void memory_allocation_failure_014 ()
 {
 	int (*ptr1)[4];
-	char  **dptr,a;
+	char  **dptr,a = 0;
 	double *ptr,b;
 	int i,j;
 	static int staticflag=10;

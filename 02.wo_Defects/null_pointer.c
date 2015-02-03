@@ -8,6 +8,8 @@
 * Description: Defect Free Code to identify false positives in deferencing Null Pointer
 */
 
+static int sink;
+
 #include "HeaderFile.h"
 int rand (void);
 
@@ -32,6 +34,7 @@ void null_pointer_002 ()
 	int *p = buf;
 	int ret;
 	ret = *p; /*Tool should not detect this line as error*/ /*NO ERROR:NULL pointer dereference*/ 
+        sink = ret;
 }
 
 /*

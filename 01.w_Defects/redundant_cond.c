@@ -28,6 +28,7 @@ void redundant_cond_001 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -46,6 +47,7 @@ void redundant_cond_002 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -64,6 +66,7 @@ void redundant_cond_003 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -82,6 +85,7 @@ void redundant_cond_004 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -100,6 +104,7 @@ void redundant_cond_005 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -121,6 +126,7 @@ void redundant_cond_006 ()
 		}
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -136,6 +142,7 @@ void redundant_cond_007 ()
 	a = rand();
 	b = ((5 < a) && (10 < a)) ? 0 : 1;/*Tool should detect this line as error*/ /*ERROR:Redundant condition*/
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -153,6 +160,7 @@ void redundant_cond_008 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -172,6 +180,7 @@ void redundant_cond_009 ()
 		a --;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -191,6 +200,7 @@ void redundant_cond_010 ()
 		a ++;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -210,6 +220,7 @@ void redundant_cond_011 ()
 		a ++;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -229,6 +240,7 @@ void redundant_cond_012 ()
 		a ++;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -248,6 +260,7 @@ void redundant_cond_013 ()
 		a --;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -268,6 +281,7 @@ void redundant_cond_014 ()
 	}
 	while ((5 < a) && (10 < a));/*Tool should detect this line as error*/ /*ERROR:Redundant condition*/
 	ret = b;
+        sink = ret;
 }
 
 /*

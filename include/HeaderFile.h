@@ -14,6 +14,9 @@
 #include<ctype.h>
 #include<unistd.h>
 
+extern int idx, sink;
+extern double dsink;
+
 void bit_shift_main (void);
 void dynamic_buffer_overrun_main (void);
 void dynamic_buffer_underrun_main (void);

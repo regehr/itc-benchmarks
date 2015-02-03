@@ -26,6 +26,7 @@ void conflicting_cond_001 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -44,6 +45,7 @@ void conflicting_cond_002 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -62,6 +64,7 @@ void conflicting_cond_003 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -83,6 +86,7 @@ void conflicting_cond_004 ()
 		}
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -98,6 +102,7 @@ void conflicting_cond_005 ()
 	a = rand();
 	b = ((a == 0) && (a == 1)) ? 0 : 1; /*Tool should detect this line as error*/ /*ERROR:contradict condition*/
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -115,6 +120,7 @@ void conflicting_cond_006 ()
 		b += a;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -134,6 +140,7 @@ void conflicting_cond_007 ()
 		a ++;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -153,6 +160,7 @@ void conflicting_cond_008 ()
 		a ++;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -172,6 +180,7 @@ void conflicting_cond_009 ()
 		a ++;
 	}
 	ret = b;
+        sink = ret;
 }
 
 /*
@@ -189,6 +198,7 @@ void conflicting_cond_010 ()
 	}
 	while ((a == 0) && (a == 1)); /*Tool should detect this line as error*/ /*ERROR:contradict condition*/
 	ret = a;
+        sink = ret;
 }
 
 /*

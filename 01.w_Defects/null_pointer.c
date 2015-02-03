@@ -8,6 +8,8 @@
 *
 */
 
+static int sink;
+
 #include "HeaderFile.h"
 int rand (void);
 
@@ -30,6 +32,7 @@ void null_pointer_002 ()
 	int *p = NULL;
 	int ret;
 	ret = *p;/*Tool should detect this line as error*/ /*ERROR:NULL pointer dereference*/
+        sink = ret;
 }
 
 /*

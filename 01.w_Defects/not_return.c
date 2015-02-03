@@ -27,6 +27,7 @@ void not_return_001 ()
 {
 	int ret;
 	ret = not_return_001_func_001(rand());
+        sink = ret;
 }
 
 /*
@@ -52,6 +53,7 @@ void not_return_002 ()
 {
 	int ret;
 	ret = not_return_002_func_001(rand(), rand());
+        sink = ret;
 }
 
 /*
@@ -77,6 +79,7 @@ void not_return_003 ()
 {
 	int ret;
 	ret = not_return_003_func_001(rand());
+        sink = ret;
 }
 
 /*
@@ -99,6 +102,7 @@ void not_return_004 ()
 {
 	int ret;
 	ret = not_return_004_func_001(rand());
+        sink = ret;
 }
 
 /*

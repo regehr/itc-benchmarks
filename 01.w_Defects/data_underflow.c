@@ -18,6 +18,7 @@ void data_underflow_001 ()
 	int min = -2147483647;	/* 0x80000001 */
 	int ret;
 	ret = min - 2;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -29,6 +30,7 @@ void data_underflow_002 ()
 	unsigned int min = 0;
 	unsigned int ret;
 	ret = min - 1;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -42,6 +44,7 @@ void data_underflow_003 ()
 	min --;
 	min --;
 	ret = min;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -53,6 +56,7 @@ void data_underflow_004 ()
 	int min = -2147483521;
 	int ret;
 	ret = min - 128;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -64,6 +68,7 @@ void data_underflow_005 ()
 	int min = -1073741825;	/* 0xbfffffff */
 	int ret;
 	ret = min * 2;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -74,6 +79,7 @@ void data_underflow_006 ()
 {
 	int ret;
 	ret = (-2147483647) - 2;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -88,6 +94,7 @@ void data_underflow_007 ()
 	float min = 1.40129846e-45F;
 
 	ret = min / 2.0F;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -102,6 +109,7 @@ void data_underflow_008 ()
 	double min = 4.9406564584124654e-324;
 
 	ret = min / 2.0;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -113,6 +121,7 @@ void data_underflow_009 ()
 	char min = -128;	/* 0x80000002 */
 	char ret;
 	ret = min - 2;/*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 /*
@@ -129,6 +138,7 @@ void data_underflow_010 ()
 	int min = -2147483647;
 	int ret;
 	ret = min - data_underflow_010_func_001(); /*Tool should detect this line as error*/ /*ERROR:Data Under*/
+        sink = ret;
 }
 
 /*
@@ -140,6 +150,7 @@ void data_underflow_011_func_001 (int d)
 	int min = -2147483647;
 	int ret;
 	ret = min - d; /*Tool should detect this line as error*/ /*ERROR:Data Underflow*/
+        sink = ret;
 }
 
 void data_underflow_011 ()
@@ -157,6 +168,7 @@ void data_underflow_012 ()
 	int dlist[4] = {0, 1, -2, -1};
 	int ret;
 	ret = min - dlist[2]; /*Tool should detect this line as error*/ /*ERROR:Data underflow*/
+        sink = ret;
 }
 
 /*

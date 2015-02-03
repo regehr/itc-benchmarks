@@ -273,15 +273,13 @@ void memory_leak_0011()
     buf = (char *)calloc(50, sizeof(char)); /*Tool should not detect  this line as error*/ /*No ERROR:Memory Leakage */
 	if(buf!=NULL)
 	{
-       strcpy(buf, "This Is A String");
-       un.u1 = buf;
-	}
-
-    {
-    	char * buf = un.u1;
-        free(buf);
-        buf = NULL;
-    }
+          strcpy(buf, "This Is A String");
+          un.u1 = buf;
+          char * buf = un.u1;
+          if (buf)
+            free(buf);
+          buf = NULL;
+        }
 }
 
 /*

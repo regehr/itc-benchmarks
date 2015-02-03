@@ -27,6 +27,7 @@ void cmp_funcadr_001 ()
 	{
 		ret = 1;
 	}
+        sink = ret;
 }
 
 /*
@@ -48,6 +49,7 @@ void cmp_funcadr_002 ()
 	{
 		ret = 1;
 	}
+        sink = ret;
 }
  /* ! defined(CHECKER_POLYSPACE) */
 

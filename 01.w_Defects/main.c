@@ -10,6 +10,9 @@ volatile int vflag;
 volatile int vflag_copy;
 volatile int vflag_file;
 
+int idx, sink;
+double dsink;
+
 int main(int argc,char*argv[])
 {
 	if(argv[1])

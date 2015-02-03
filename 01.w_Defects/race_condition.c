@@ -57,8 +57,6 @@ void* race_condition_002_1()
 	
 		if(race_condition_002_gbl<100)
 		{
-			int i;
-			i=10;
 			race_condition_002_gbl++; /*Tool should detect this line as error*/ /*ERROR:Race condition*/
 		}
 
