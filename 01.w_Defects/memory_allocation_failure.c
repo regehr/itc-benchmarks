@@ -16,7 +16,7 @@
 */
 #include "HeaderFile.h"
 
-#define MAX_VAL 4294967295UL
+#define MAX_VAL UINT_MAX
 
 unsigned int memory_allocation_failure_005_gbl = 65536;
 
@@ -215,22 +215,17 @@ static unsigned int static_var = MAX_VAL*2;
 static char * memory_allocation_failure_007_func_001 (char *str1)
 {
     int j;
-    if (str1 != NULL)
-    {
-        memory_allocation_failure_007_str_gbl = (char *) malloc(static_var+1);/*Tool should detect this line as error*/ /*ERROR:Memory allocation failure */
-        if(memory_allocation_failure_007_str_gbl!=NULL)
-        {
-        for (j = 0; j < static_var; j++)
-        {
-            memory_allocation_failure_007_str_gbl[j] = str1[static_var-j-1];
+    if (str1 != NULL) {
+      memory_allocation_failure_007_str_gbl = (char *) malloc(static_var+1);/*Tool should detect this line as error*/ /*ERROR:Memory allocation failure */
+      if(memory_allocation_failure_007_str_gbl!=NULL) {
+        for (j = 0; j < static_var; j++) {
+          memory_allocation_failure_007_str_gbl[j] = str1[static_var-j-1];
         }
         memory_allocation_failure_007_str_gbl[static_var] = '\0';
-        }
-        return memory_allocation_failure_007_str_gbl;
-    }
-    else
-    {
-        return NULL;
+      }
+      return memory_allocation_failure_007_str_gbl;
+    } else {
+      return NULL;
     }
 }
 

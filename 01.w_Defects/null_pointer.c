@@ -101,7 +101,7 @@ void null_pointer_005 ()
 void null_pointer_006 ()
 {
 	int *p;
-	p = (int *)rand();
+	p = (int *)(intptr_t)rand();
 	*p = 1;/*Tool should detect this line as error*/ /*ERROR:NULL pointer dereference*/
 }
 
@@ -113,7 +113,7 @@ void null_pointer_007 ()
 {
 	int *p;
 	int a = 3;
-	p = (int *)((2 * a) - 6);
+	p = (int *)(intptr_t)((2 * a) - 6);
 	*p = 1;/*Tool should detect this line as error*/ /*ERROR:NULL pointer dereference*/
 }
 

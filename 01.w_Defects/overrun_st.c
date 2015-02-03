@@ -413,7 +413,6 @@ void overrun_st_031 ()
 	int *p;
 	p = overrun_st_031_buf_gbl;
 	p[5] = 1;/*Tool should detect this line as error*/ /*ERROR: buffer overrun */
-        sink = buf[idx];
 }
 
 /*

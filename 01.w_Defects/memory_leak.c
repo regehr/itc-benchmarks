@@ -228,7 +228,7 @@ void memory_leak_009 ()
 	int *p = (int*) malloc(5 * sizeof(int)); /*Tool should detect this line as error*/ /*ERROR:Memory Leakage */
 	if(ptr !=NULL)
 	{
-	   p = ptr;
+          p = (int *)ptr;
 	   *(p+1) = 1.5;
 	   free (ptr);
 	   ptr = NULL;

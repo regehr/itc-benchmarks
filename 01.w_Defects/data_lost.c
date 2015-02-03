@@ -8,8 +8,6 @@
 * Description: Defect Code to identify defects in data lost at cast
 */
 
-static int sink;
-
 int rand (void);
 #include "HeaderFile.h"
 /*
@@ -134,7 +132,6 @@ void data_lost_010 ()
 	data_lost_010_s_001 s;
 	s.a = 0x1f;
 	s.ret = s.a;/*Tool should detect this line as error*/ /*ERROR:Integer precision lost because of cast*/
-        sink = ret;
 }
 
 /*
