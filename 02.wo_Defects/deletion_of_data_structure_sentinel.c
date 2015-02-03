@@ -38,7 +38,7 @@ void deletion_of_data_structure_sentinel_002()
 {
 	char str1[]="This is a string";
 	char str[17];
-	memcpy(str,str1,strlen(str)+1);/*Tool should Not detect this line as error*/ /*No ERROR:Deletion of a data structure sentinel*/
+	memcpy(str,str1,strlen(str1)+1);/*Tool should Not detect this line as error*/ /*No ERROR:Deletion of a data structure sentinel*/
 }
 
 /*
