@@ -34,10 +34,10 @@ void* race_condition_001_2()
 void race_condition_001()
 {
 	pthread_t pthread1,pthread2,pthread3,pthread4;
-	int stat1=pthread_create(&pthread1,NULL,race_condition_001_1,NULL);
-	stat1=pthread_create(&pthread2,NULL,race_condition_001_1,NULL);
-	stat1=pthread_create(&pthread3,NULL,race_condition_001_2,NULL);
-	stat1=pthread_create(&pthread4,NULL,race_condition_001_2,NULL);
+	pthread_create(&pthread1,NULL,race_condition_001_1,NULL);
+	pthread_create(&pthread2,NULL,race_condition_001_1,NULL);
+	pthread_create(&pthread3,NULL,race_condition_001_2,NULL);
+	pthread_create(&pthread4,NULL,race_condition_001_2,NULL);
 }
 
 /* Race condition
@@ -73,8 +73,8 @@ void race_condition_002()
 	while(1)
 	{
 		pthread_t pthread1,pthread2;
-		int stat1=pthread_create(&pthread1,NULL,race_condition_002_1,NULL);
-		 stat1=pthread_create(&pthread2,NULL,race_condition_002_1,NULL);
+		pthread_create(&pthread1,NULL,race_condition_002_1,NULL);
+                pthread_create(&pthread2,NULL,race_condition_002_1,NULL);
 	}
 }
 
@@ -103,9 +103,9 @@ void race_condition_003()
 	while(1)
 	{
 		pthread_t pthread1,pthread2,pthread3;
-		int stat1=pthread_create(&pthread1,NULL,race_condition_003_1,NULL);
-		int stat2=pthread_create(&pthread2,NULL,race_condition_003_1,NULL);
-		int stat3=pthread_create(&pthread2,NULL,race_condition_003_1,NULL);
+		pthread_create(&pthread1,NULL,race_condition_003_1,NULL);
+		pthread_create(&pthread2,NULL,race_condition_003_1,NULL);
+		pthread_create(&pthread2,NULL,race_condition_003_1,NULL);
 	}
 }
 
@@ -294,7 +294,7 @@ void race_condition_007 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t tid1,tid2;
-	int t1 = 10, t2 = 20;
+	intptr_t t1 = 10, t2 = 20;
 	/*pthread_mutex_init(&race_condition_007_glb_mutex, NULL);*/
 	pthread_create(&tid1, NULL, race_condition_007_tsk_001, (void *)t1);
 	pthread_create(&tid2, NULL, race_condition_007_tsk_001, (void *)t2);
@@ -365,8 +365,8 @@ void race_condition_008 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   pthread_create(&th1, NULL, race_condition_008_tsk_001, (void *)t1);
 	   pthread_create(&th2, NULL, race_condition_008_tsk_002, (void *)t2);
 	   sleep(1);

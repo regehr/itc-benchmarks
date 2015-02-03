@@ -172,7 +172,7 @@ void lock_never_unlock_003 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t tid1,tid2;
-	int t1 = 10, t2 = 20;
+	intptr_t t1 = 10, t2 = 20;
 	pthread_mutex_init(&lock_never_unlock_003_glb_mutex, NULL);
 	pthread_create(&tid1, NULL, lock_never_unlock_003_tsk_001, (void *)t1);
 	pthread_create(&tid2, NULL, lock_never_unlock_003_tsk_001, (void *)t2);
@@ -241,8 +241,8 @@ void lock_never_unlock_004 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   pthread_create(&th1, NULL, lock_never_unlock_004_tsk_001, (void *)t1);
 	   pthread_create(&th2, NULL, lock_never_unlock_004_tsk_002, (void *)t2);
 	   sleep(1);
@@ -338,8 +338,8 @@ void lock_never_unlock_006 ()
 	int thread_set = 0;
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	long int t1 = 10;
-	long int t2 = 20;
+	intptr_t t1 = 10;
+	intptr_t t2 = 20;
 	if ( thread_set == CREATE_THREAD)
 	{
 		;
@@ -416,8 +416,8 @@ void lock_never_unlock_007 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   pthread_create(&th1, NULL, lock_never_unlock_007_tsk_001, (void *)t1);
 	   pthread_create(&th2, NULL, lock_never_unlock_007_tsk_002, (void *)t2);
 	   pthread_join(th1, NULL);
@@ -490,8 +490,8 @@ void lock_never_unlock_008 ()
 	int thread_set = 0;
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   if ( thread_set == CREATE_THREAD)
 	   {
            ;
@@ -569,8 +569,8 @@ void lock_never_unlock_009 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   pthread_create(&th1, NULL, lock_never_unlock_009_tsk_001, (void *)t1);
 	   pthread_create(&th2, NULL, lock_never_unlock_009_tsk_002, (void *)t2);
 	   pthread_join(th1, NULL);

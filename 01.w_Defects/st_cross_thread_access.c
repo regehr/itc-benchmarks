@@ -171,8 +171,8 @@ void st_cross_thread_access_002 ()
 {
 #if !defined(CHECKER_POLYSPACE)
 	pthread_t tid1,tid2;
-	int const st_cross_thread_access_002_t1 = 10;
-	int const st_cross_thread_access_002_t2 = 10;
+	intptr_t st_cross_thread_access_002_t1 = 10;
+	intptr_t st_cross_thread_access_002_t2 = 10;
 	pthread_mutex_init(&st_cross_thread_access_002_glb_mutex, NULL);
 	pthread_create(&tid1, NULL, st_cross_thread_access_002_tsk_001, (void *)st_cross_thread_access_002_t1);
 	sleep(1);
@@ -260,7 +260,7 @@ void st_cross_thread_access_003 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t tid1,tid2;
-	int t1 = 10, t2 = 20;
+	intptr_t t1 = 10, t2 = 20;
 	pthread_mutex_init(&st_cross_thread_access_003_glb_mutex, NULL);
 	pthread_create(&tid1, NULL, st_cross_thread_access_003_tsk_001, (void *)t1);
 	pthread_create(&tid2, NULL, st_cross_thread_access_003_tsk_002, (void *)t2);
@@ -348,8 +348,8 @@ void st_cross_thread_access_004 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   pthread_create(&th1, NULL, st_cross_thread_access_004_tsk_001, (void *)t1);
 	   pthread_create(&th2, NULL, st_cross_thread_access_004_tsk_002, (void *)t2);
 	   /*pthread_join(th1, NULL);
@@ -512,8 +512,8 @@ void st_cross_thread_access_006 ()
 	int thread_set = 0;
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t th1,th2;
-	   long int t1 = 10;
-	   long int t2 = 20;
+	   intptr_t t1 = 10;
+	   intptr_t t2 = 20;
 	   if ( thread_set == CREATE_THREAD)
 	   {
            ;

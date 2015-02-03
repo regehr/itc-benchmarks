@@ -170,7 +170,7 @@ void lock_never_unlock_003 ()
 {
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t tid1,tid2;
-	int t1 = 10, t2 = 20;
+	intptr_t t1 = 10, t2 = 20;
 	pthread_mutex_init(&lock_never_unlock_003_glb_mutex, NULL);
 	pthread_create(&tid1, NULL, lock_never_unlock_003_tsk_001, (void *)t1);
 	pthread_create(&tid2, NULL, lock_never_unlock_003_tsk_001, (void *)t2);

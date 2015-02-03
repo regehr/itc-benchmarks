@@ -259,7 +259,7 @@ void memory_allocation_failure_007 ()
 enum {max_buffer = MAX_VAL*2};
 char * memory_allocation_failure_008_func_001 (const char *msg) {
   const char *error_log = msg;
-  char * buffer ;
+  char * buffer = 0;
   int i;
   for(i=0;i<max_buffer;i++)
   {

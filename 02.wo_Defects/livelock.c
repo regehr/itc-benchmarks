@@ -64,8 +64,8 @@ void livelock_001()
 	pthread_mutex_init(&livelock_001_glb_A,NULL);
 	pthread_mutex_init(&livelock_001_glb_B,NULL);
 
-	int stat1=pthread_create(&pthreadA,NULL,mythreadA,NULL);
-	int stat2=pthread_create(&pthreadB,NULL,(void *) &mythreadB,NULL);
+	pthread_create(&pthreadA,NULL,mythreadA,NULL);
+	pthread_create(&pthreadB,NULL,(void *) &mythreadB,NULL);
 
 	pthread_join(pthreadA,NULL);
 	pthread_join(pthreadB,NULL);
