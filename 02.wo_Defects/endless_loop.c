@@ -8,6 +8,8 @@
 * Description: Defect Free Code to identify false positives in unintentional endless looping
 */
 
+#include "HeaderFile.h"
+
 /*
  * Types of defects: infinite loop
  * Complexity: the for statement	No ongoing condition equation

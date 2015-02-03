@@ -8,6 +8,7 @@
 *
 */
 
+#include "HeaderFile.h"
 
 /*
  * Types of defects: buffer underrun ( static buffer )

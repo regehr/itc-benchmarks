@@ -8,6 +8,8 @@
 * Description: Defect Free Code to identify false positives in redundant condition
 */
 
+#include "HeaderFile.h"
+
 int rand (void);
 
 /*

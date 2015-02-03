@@ -2,6 +2,8 @@
 /* Stub created in main body with same timing		*/
 /************************************************/
 
+#include "HeaderFile.h"
+
 /* For PolySpace */
 #if defined(CHECKER_POLYSPACE)
 #include <pthread.h>

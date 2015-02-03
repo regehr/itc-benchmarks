@@ -8,6 +8,8 @@
 * Description: Defect Free Code to identify false positives in losing sign due to cast
 */
 
+#include "HeaderFile.h"
+
 int rand (void);
 
 /*

@@ -8,6 +8,7 @@
 * Description: Defect Free Code to identify false positives in memory copy at overlapping areas
 */
 
+#include "HeaderFile.h"
 
 /*
  * Types of defects: copy of the overlapped area

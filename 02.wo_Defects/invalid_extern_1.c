@@ -8,6 +8,7 @@
 *
 */
 
+#include "HeaderFile.h"
 
 int invalid_extern_001_glb_buf[5] = {1, 2, 3, 4, 5};
 float invalid_extern_001_glb_float[5] = {1.0, 2.0, 3.0, 4.0, 5.0};

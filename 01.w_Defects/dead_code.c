@@ -8,6 +8,7 @@
 * Description: Defect Code to identify defects in dead code
 */
 
+#include "HeaderFile.h"
 
 /*
 * Types of defects: dead code

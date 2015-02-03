@@ -8,6 +8,7 @@
 * Description: Defect Free Code to identify false positives in lesser static memory allocation
 */
 
+#include "HeaderFile.h"
 
 /*
  * Types of defects: Allocate small size for type - structure  (static)

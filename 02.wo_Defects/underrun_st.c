@@ -8,6 +8,7 @@
 * Description: Defect Free Code to identify false positives in stack underun condition
 */
 
+#include "HeaderFile.h"
 
 /*
  * Types of defects: buffer underrun ( static buffer )

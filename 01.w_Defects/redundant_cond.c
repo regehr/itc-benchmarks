@@ -8,6 +8,8 @@
 *
 */
 
+#include "HeaderFile.h"
+
 int rand (void);
 
 /*

@@ -8,6 +8,7 @@
 *
 */
 
+#include "HeaderFile.h"
 
 /*
  * Types of defects: copy of the overlapped area

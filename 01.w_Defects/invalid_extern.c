@@ -8,6 +8,8 @@
 *
 */
 
+#include "HeaderFile.h"
+
 /*
  * Types of defects: external variable type mistake
  * Complexity: external variable type error
