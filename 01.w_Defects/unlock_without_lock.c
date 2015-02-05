@@ -157,34 +157,33 @@ void unlock_without_lock_003_func_001 (void *pram)
 {
 #if ! defined(CHECKER_POLYSPACE)
 
-    if(unlock_without_lock_003_func_002(0) >1)
+  if(unlock_without_lock_003_func_002(0) >1)
     {
-    	pthread_mutex_lock (&unlock_without_lock_003_glb_mutex);/*Tool should detect this line as error*/ /* ERROR:UnLock without lock */
+      pthread_mutex_lock (&unlock_without_lock_003_glb_mutex);/*Tool should detect this line as error*/ /* ERROR:UnLock without lock */
     }
-    unlock_without_lock_003_glb_data = (unlock_without_lock_003_glb_data) + 1.2;
-
+  unlock_without_lock_003_glb_data = (unlock_without_lock_003_glb_data) + 1.2;
+  
 #if defined PRINT_DEBUG
-	int ip = (intptr_t)pram;
-	printf("Task3! Unlock without Lock, thread # %d! gbl3 = %f \n",ip ,unlock_without_lock_003_glb_data);
+  int ip = (intptr_t)pram;
+  printf("Task3! Unlock without Lock, thread # %d! gbl3 = %f \n",ip ,unlock_without_lock_003_glb_data);
 #endif /* defined(PRINT_DEBUG) */
-	unlock_without_lock_003_func_002(10);
-    if(unlock_without_lock_003_func_002(10) >1)
+  unlock_without_lock_003_func_002(10);
+  if(unlock_without_lock_003_func_002(10) >1)
     {
-    	pthread_mutex_unlock (&unlock_without_lock_003_glb_mutex);
+      pthread_mutex_unlock (&unlock_without_lock_003_glb_mutex);
     }
 #endif /* ! defined(CHECKER_POLYSPACE) */
 }
 
 int unlock_without_lock_003_func_002 (int a )
 {
-    int ret = 0;
-	if (a > 1)
-    {
-    	ret = a++;
-    }
-    else
-    	ret = 0;
-    return ret;
+  int ret = 0;
+  if (a > 1) {
+    ret = a++;
+  } else {
+    ret = 0;
+  }
+  return ret;
 }
 
 void* unlock_without_lock_003_tsk_001 (void *pram)

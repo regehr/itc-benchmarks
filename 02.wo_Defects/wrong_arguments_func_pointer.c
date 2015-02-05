@@ -204,20 +204,26 @@ void wrong_arguments_func_pointer_008 ()
 */
 char wrong_arguments_func_pointer_009_func_001(char *str1, char *str2, char*str3)
 {
-    strcat(str1,str2);
+    strcpy(str1,str2);
     strcpy(str3,str1);
-	return ('c');
+    return ('c');
 }
 
 void wrong_arguments_func_pointer_009 ()
 {
-    char *str1 = "STRING";
-	char *str2 = "STRING55";
-	char *str3 = (char *) malloc(20*sizeof(char));
-	char ret;
-	char (*func)(char *,char *, char *);
-	func = wrong_arguments_func_pointer_009_func_001;
-	ret = func(str1,str2,str3); /*Tool should not detect this line as error*//*No ERROR:Wrong arguments passed to a function pointer*/
+  char *str1 = strdup("STRING33");
+  if (!str1) return;
+  char *str2 = strdup("STRING55");
+  if (!str2) return;
+  char *str3 = (char *) malloc(20*sizeof(char));
+  if (!str3) return;
+  char ret;
+  char (*func)(char *,char *, char *);
+  func = wrong_arguments_func_pointer_009_func_001;
+  ret = func(str1,str2,str3); /*Tool should not detect this line as error*//*No ERROR:Wrong arguments passed to a function pointer*/
+  free(str1);
+  free(str2);
+  free(str3);
 }
 
 /*
@@ -404,14 +410,14 @@ long wrong_arguments_func_pointer_014_func_002 (long a[],int max)
 
 void wrong_arguments_func_pointer_014 ()
 {
- 	long arr[5];
-	if(wrong_arguments_func_pointer_014_func_001(0) == 0)
-	{
-		long (*fptr)(long [],int);
-		long a;
-		fptr = wrong_arguments_func_pointer_014_func_002;
-		a =fptr(arr,5); /*Tool should not detect this line as error*//*No ERROR:Wrong arguments passed to a function pointer*/
-	}
+  long arr[5];
+  if(wrong_arguments_func_pointer_014_func_001(0) == 0)
+    {
+      long (*fptr)(long [],int);
+      long a;
+      fptr = wrong_arguments_func_pointer_014_func_002;
+      a =fptr(arr,5); /*Tool should not detect this line as error*//*No ERROR:Wrong arguments passed to a function pointer*/
+    }
 }
 
 /*
@@ -463,21 +469,21 @@ void wrong_arguments_func_pointer_015 ()
 */
 char wrong_arguments_func_pointer_016_func_001(char *str1, int *str2, float*str3)
 {
-    char *s = "STR";
-	strcpy(s,str1);
-    *str2 +=1;
-    *str3 +=1;
-	return (*str2);
+  char s[20];
+  strcpy(s,str1);
+  *str2 +=1;
+  *str3 +=1;
+  return (*str2);
 }
 void wrong_arguments_func_pointer_016 ()
 {
-    char *str1 = "STRING";
-	int a=10,*str2 = &a;
-	float f=20.5,*str3 = &f;
-	char ret;
-	char (*func)(char *,int *, float *);
-	func = wrong_arguments_func_pointer_016_func_001; /*Tool should not detect this line as error*//*No ERROR:Wrong arguments passed to a function pointer*/
-	ret = func(str1,str2,str3);
+  char *str1 = "STRING";
+  int a=10,*str2 = &a;
+  float f=20.5,*str3 = &f;
+  char ret;
+  char (*func)(char *,int *, float *);
+  func = wrong_arguments_func_pointer_016_func_001; /*Tool should not detect this line as error*//*No ERROR:Wrong arguments passed to a function pointer*/
+  ret = func(str1,str2,str3);
 }
 
 /*

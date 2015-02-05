@@ -473,11 +473,11 @@ void wrong_arguments_func_pointer_015 ()
 */
 char wrong_arguments_func_pointer_016_func_001(char *str1, int *str2, float*str3)
 {
-    char *s = "STR";
-	strcpy(s,str1);
-    *str2 +=1;
-    *str3 +=1;
-	return (*str2);
+  char s[20];
+  strcpy(s,str1);
+  *str2 +=1;
+  *str3 +=1;
+  return (*str2);
 }
 void wrong_arguments_func_pointer_016 ()
 {
