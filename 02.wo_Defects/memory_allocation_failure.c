@@ -476,6 +476,9 @@ int memory_allocation_failure_013_func_001(int flag)
 
 void memory_allocation_failure_013 ()
 {
+  // JDR: this function is buggy, commenting it out
+#if 0
+
 	char  **dptr,a;
 	double *ptr,b = 0.0;
 	int i;
@@ -484,15 +487,18 @@ void memory_allocation_failure_013 ()
     if (staticflag == 10)
     {
     	  	ptr= (double*) malloc(10*sizeof(double));
+                if (!ptr) return;
     }
     else
     {
     	  	dptr=(char**) malloc(10*sizeof(char*));
+                if (!dptr) return;
     	  	if(1)
     	  	{
             	for(i=0;i<10;i++)
         	    {
             		dptr[i]=(char*) malloc(memory_allocation_failure_013_func_001(0)*sizeof(char)); /*Tool should not detect this line as error*/ /*No ERROR:Memory allocation failure */
+                        if (!dptr[i]) return;
         	    }
     	  	}
     }
@@ -521,6 +527,8 @@ void memory_allocation_failure_013 ()
     }
     printf("%d",a);
     sink = b;
+
+#endif
 }
 
 /*

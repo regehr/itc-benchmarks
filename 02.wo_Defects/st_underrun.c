@@ -189,7 +189,8 @@ typedef struct {
 
 void st_underrun_006_func_001 (st_underrun_006_s_001 s)
 {
-
+  // JDR: commenting out -- this most certainly does access invalid RAM
+#if 0
 	 int len = strlen(s.buf) - 1;
 	 char c = 0;
 	 for (;s.buf[len] != 'Z';len--) /*Tool should not detect this line as error*/ /* No Stack Under RUN error */
@@ -199,11 +200,15 @@ void st_underrun_006_func_001 (st_underrun_006_s_001 s)
 			 break;
 	 }
          sink = c;
+#endif
 }
 
 void st_underrun_006 ()
 {
 	st_underrun_006_s_001 s;
+        // JDR: this is an array overrun (copying 12 bytes into a 10-byte array)
+        // but maybe it is OK since the struct is guaranteed to have buf1 right
+        // after buf?
 	strcpy(s.buf,"STRING !!!!");
 	void (*func)(st_underrun_006_s_001);
 	func = st_underrun_006_func_001;
