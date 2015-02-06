@@ -45,7 +45,8 @@ void data_overflow_003 ()
 {
 	int max = 0x7ffffffe;
 	int ret;
-	ret = max + 2;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
+        // JDR: fixed a signed overflow in next line
+	ret = max + 1;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
         sink = ret;
 }
 

@@ -267,19 +267,19 @@ void redundant_cond_013 ()
  */
 void redundant_cond_014 ()
 {
-	int a;
-	int b = 0;
-	int ret;
+  int a;
+  int b = 0;
+  int ret;
 
-	a = rand();
-	do
-	{
-		b += a;
-		a --;
-	}
-	while (10 < a); /*Tool should not detect this line as error*/ /*No ERROR:Redundant condition*/
-	ret = b;
-        sink = ret;
+  a = rand();
+  do {
+    // JDR: cast to unsigned to avoid UB
+    b += (unsigned)a;
+    a --;
+  }
+  while (10 < a); /*Tool should not detect this line as error*/ /*No ERROR:Redundant condition*/
+  ret = b;
+  sink = ret;
 }
 
 /*
