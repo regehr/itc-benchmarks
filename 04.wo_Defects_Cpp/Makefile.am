@@ -3,5 +3,5 @@ AM_CXXFLAGS = -pthread
 AM_LDFLAGS = -lm
 bin_PROGRAMS = 04_wo_Defects_Cpp
 04_wo_Defects_Cpp_SOURCES = \
-HeaderFile.hpp \
+$(top_srcdir)/include/HeaderFile.hpp \
 improper_error_handling.cpp  main.cpp

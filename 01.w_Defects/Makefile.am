@@ -3,7 +3,7 @@ AM_CFLAGS = -pthread
 AM_LDFLAGS = -lm
 bin_PROGRAMS = 01_w_Defects
 01_w_Defects_SOURCES = \
-HeaderFile.h \
+$(top_srcdir)/include/HeaderFile.h \
 bit_shift.c			       main.c \
 buffer_overrun_dynamic.c	       memory_allocation_failure.c \
 buffer_underrun_dynamic.c	       memory_leak.c \
