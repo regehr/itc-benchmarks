@@ -774,6 +774,7 @@ void dynamic_buffer_underrun_039()
 	{
 		for(i=-10;i<15;i++)
 		{
+                        // TODO: this loop does not use i so no buffer underrun actually occurs
 			memset(ptr_s1,1,15*sizeof(dynamic_buffer_underrun_s_008)); /*Tool should detect this line as error*/ /*ERROR:Buffer Underrun*/
 		}
 	    memcpy(ptr_s2,ptr_s1,15*sizeof(dynamic_buffer_underrun_s_008));

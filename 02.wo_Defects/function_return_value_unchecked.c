@@ -187,7 +187,13 @@ float (*function_return_value_unchecked_006_func_001())[4]
 	p= (float (*)[]) calloc (1,sizeof(arr));
     if(p!=NULL)
     {
-       memset(p, 1.00, 16);
+    	for (i = 0;i< 4; i++)
+    	{
+		   for ( j=0 ;j<4; j++)
+		   {
+		       *(p[i]+j) = 1.0;
+		   }
+	   }
     }
     if(p!=NULL)
     {

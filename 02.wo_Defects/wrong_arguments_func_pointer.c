@@ -405,7 +405,7 @@ long wrong_arguments_func_pointer_014_func_002 (long a[],int max)
 	{
 		a[i] = i;
 	}
-	return a[i];
+	return a[i-1];
 }
 
 void wrong_arguments_func_pointer_014 ()

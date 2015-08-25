@@ -54,7 +54,7 @@ void sign_conv_003 ()
  */
 void sign_conv_004 ()
 {
-	unsigned long a = 0xffffffff;
+	unsigned long a = 0xffffffffffffffff;
 	long ret;
 	ret = a;/*Tool should detect this line as error*/ /*Integer sign lost because of unsigned cast */
         sink = ret;

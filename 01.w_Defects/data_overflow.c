@@ -55,7 +55,7 @@ void data_overflow_003 ()
  */
 void data_overflow_004 ()
 {
-	long max = 0x7fffffff;
+	long max = 0x7fffffffffffffff;
 	long ret;
 	ret = max + 1;/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
         sink = ret;
@@ -103,7 +103,7 @@ void data_overflow_007 ()
  */
 void data_overflow_008 ()
 {
-	unsigned long max = 0xffffffff;
+	unsigned long max = 0xffffffffffffffff;
 	unsigned long ret;
 	ret = max + 1;/*Tool should detect this line as error*/ /*ERROR:Data Overflow*/
         sink = ret;

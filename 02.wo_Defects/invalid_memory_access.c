@@ -105,6 +105,7 @@ void invalid_memory_access_003 ()
 	        c = buf;
 	        free(buf);
     	    buf = NULL; /*Tool should not detect this line as error*/ /*No ERROR:Invalid memory access to already freed area*/
+    	    c = NULL;
 		}
 	    i++;
 	    if(i>=10)

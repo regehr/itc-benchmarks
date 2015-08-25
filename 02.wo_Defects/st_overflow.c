@@ -179,7 +179,7 @@ void st_overflow_006_func_001 (st_overflow_006_s_001 s)
 	char buf[524288];	 /* 512 Kbytes */
 	buf[1] = 10;
 	s.buf[0] = 1; /*Tool should not detect this line as error*/ /*NO ERROR:Stack overflow*/
-        sink = buf[idx];
+        sink = buf[1];
 }
 
 void st_overflow_006 ()

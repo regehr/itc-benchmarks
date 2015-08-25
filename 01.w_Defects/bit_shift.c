@@ -30,7 +30,7 @@ void bit_shift_002 ()
 {
 	long a = 1;
 	long ret;
-	ret = a << 32;/*Tool should detect this line as error*/ /*ERROR:Bit shift error*/
+	ret = a << 64;/*Tool should detect this line as error*/ /*ERROR:Bit shift error*/
         sink = ret;
 }
 
@@ -54,7 +54,7 @@ void bit_shift_004 ()
 {
 	unsigned long a = 1;
 	unsigned long ret;
-	ret = a << 32;/*Tool should detect this line as error*/ /*ERROR:Bit shift error*/
+	ret = a << 64;/*Tool should detect this line as error*/ /*ERROR:Bit shift error*/
         sink = ret;
 }
 

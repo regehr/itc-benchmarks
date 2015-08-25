@@ -50,7 +50,7 @@ void st_underrun_002_func_001 (st_underrun_002_s_001 s)
 	 int len = strlen(s.buf) - 1;
 	 for (;s.buf[len] != 'Z';len--)  /*Tool should not detect this line as error*/ /* No Stack Under RUN error */
 	 {
-	    if ( len < 0 )
+	    if ( len <= 0 )
 			 break;
 	 }
 }
@@ -235,7 +235,7 @@ void st_underrun_007_func_001 (st_underrun_007_s_001 *s)
 	 for (;s->buf[len] != 'Z';len--)  
 	 {
         c = s->buf[len]; /*Tool should not detect this line as error*/ /* No Stack Under RUN error */
-		 if ( len < 0 )
+		 if ( len <= 0 )
 			 break;
 	 }
          sink = c;
@@ -249,7 +249,7 @@ void st_underrun_007_func_002 (st_underrun_007_s_001 s)
 void st_underrun_007 ()
 {
 	int flag = 0;
-	st_underrun_007_s_001 s;
+	st_underrun_007_s_001 s = {0};
 	s.buf[0] = 1;
 	if (flag >1 )
 	{

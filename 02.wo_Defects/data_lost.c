@@ -9,6 +9,7 @@
 */
 
 static int sink;
+static double dsink;
 
 int rand (void);
 #include "HeaderFile.h"
@@ -82,7 +83,7 @@ void data_lost_006 ()
 	double a = 3.4028232635611926e+38;	/* 2^127 * (2 - 2^(-23)) */
         // JDR: next line is a lossy cast!
 	ret = a;/*Tool should Not detect this line as error*/ /*No ERROR:Integer precision lost because of cast*/
-        sink = ret;
+        dsink = ret;
 }
 
 /*

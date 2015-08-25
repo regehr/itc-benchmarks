@@ -32,7 +32,7 @@ void ptr_subtraction_002 ()
 	int x= 10;
 	int *ptr = &x;
 	char *buf ;
-	buf= (char *)(ptr+1); /*Tool should detect this line as error*/ /*ERROR:Incorrect pointer arithmetic*/
+	buf= (char *)(ptr+2); /*Tool should detect this line as error*/ /*ERROR:Incorrect pointer arithmetic*/
 }
 
 /*

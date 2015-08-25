@@ -30,7 +30,7 @@ void invalid_memory_access_001 ()
 	int *ptr, a;
 	int flag=10;
 
-    (flag == 10)? (ptr= (int*) malloc(10*sizeof(int))) : ( a= 5);
+    (flag == 10)? (void)(ptr= (int*) malloc(10*sizeof(int))) : (void)( a= 5);
 
     if(ptr!=NULL)
     {
@@ -472,8 +472,11 @@ int invalid_memory_access_014 (int flag)
 	}
 	if(ptr!=NULL)
 	{
+                // TODO: goto jumps past line with error so it does not actually execute
    		goto my_label2;
+my_label3:
         ret = ptr[2];/*Tool should detect this line as error*/ /*ERROR:Invalid memory access to already freed area*/
+	return ret;
 
 	}
 my_label:
@@ -487,7 +490,8 @@ my_label:
 	    }
 my_label2:
     free(ptr);
-	return ret;
+    goto my_label3;
+    return ret;
 }
 
 /*

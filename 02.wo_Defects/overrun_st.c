@@ -19,7 +19,7 @@ void overrun_st_001 ()
 {
 	char buf[5];
 	buf[4] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -30,7 +30,7 @@ void overrun_st_002 ()
 {
 	short buf[5];
 	buf[4] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -53,7 +53,7 @@ void overrun_st_004 ()
 {
 	int buf[5];
 	buf[4] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -64,7 +64,7 @@ void overrun_st_005 ()
 {
 	long buf[5];
 	buf[4] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -75,7 +75,7 @@ void overrun_st_006 ()
 {
 	float buf[5];
 	buf[4] = 1.0; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -86,7 +86,7 @@ void overrun_st_007 ()
 {
 	double buf[5];
 	buf[4] = 1.0; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -97,7 +97,7 @@ void overrun_st_008 ()
 {
 	int buf[5][6];
 	buf[4][5] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx][idx];
+        sink = buf[4][5];
 }
 
 /*
@@ -108,7 +108,7 @@ void overrun_st_009 ()
 {
 	int buf[5][6][7];
 	buf[4][5][6] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx][idx][idx];
+        sink = buf[4][5][6];
 }
 
 /*
@@ -140,7 +140,7 @@ void overrun_st_011 ()
 {
 	overrun_st_011_s_001 sbuf[5];
 	sbuf[4].a = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = sbuf[idx].a;
+        sink = sbuf[4].a;
 }
 
 /*
@@ -168,7 +168,7 @@ void overrun_st_013 ()
 	int buf[5];
 	int index = 4;
 	buf[index] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -181,7 +181,7 @@ void overrun_st_014 ()
 	int index;
 	index = rand() % 5;
 	buf[index] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[index];
 }
 
 /*
@@ -193,7 +193,7 @@ void overrun_st_015 ()
 	int buf[6];
 	int index = 2;
 	buf[(2 * index) + 1] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[5];
 }
 
 /*
@@ -205,7 +205,7 @@ void overrun_st_016 ()
 	int buf[6];
 	int index = 2;
 	buf[(index * index) + 1] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[5];
 }
 
 /*
@@ -221,7 +221,7 @@ void overrun_st_017 ()
 {
 	int buf[5];
 	buf[overrun_st_017_func_001()] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -249,7 +249,7 @@ void overrun_st_019 ()
 	int indexes[4] = {3, 5, 4, 6};
 	int index = 2;
 	buf[indexes[index]] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -263,7 +263,7 @@ void overrun_st_020 ()
 	int index1;
 	index1 = index;
 	buf[index1] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -279,7 +279,7 @@ void overrun_st_021 ()
 	index1 = index;
 	index2 = index1;
 	buf[index2] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -292,7 +292,7 @@ void overrun_st_022 ()
 	char *p;
 	p = buf;
 	*(p + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -305,7 +305,7 @@ void overrun_st_023 ()
 	short *p;
 	p = buf;
 	*(p + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -332,7 +332,7 @@ void overrun_st_025 ()
 	int *p;
 	p = buf;
 	*(p + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -345,7 +345,7 @@ void overrun_st_026 ()
 	long *p;
 	p = buf;
 	*(p + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -358,7 +358,7 @@ void overrun_st_027 ()
 	float *p;
 	p = buf;
 	*(p + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -371,7 +371,7 @@ void overrun_st_028 ()
 	double *p;
 	p = buf;
 	*(p + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -386,7 +386,7 @@ void overrun_st_029 ()
 	p = buf;
 	pp = &p;
 	*(*pp + 4) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -401,7 +401,7 @@ void overrun_st_030 ()
 	p1 = buf;
 	p2 = p1;
 	p2[4] = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*
@@ -749,7 +749,7 @@ void overrun_st_053 ()
 	int *p;
 	p = (int*)buf;
 	*(p + 1) = 1; /*Tool not should detect this line as error*/ /*No ERROR: buffer overrun */
-        sink = buf[idx];
+        sink = buf[4];
 }
 
 /*

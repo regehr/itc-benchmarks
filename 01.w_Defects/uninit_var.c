@@ -116,7 +116,7 @@ void uninit_var_007 ()
  */
 int uninit_var_008_func_001 (int a)
 {
-	static int ret;
+	static int ret = 2;
 	ret -= a;
 	return ret;
 }

@@ -19,7 +19,7 @@
 pthread_mutex_t livelock_001_glb_A;
 pthread_mutex_t livelock_001_glb_B;
 
-int x,y;
+static int x,y;
 
 void *mythreadA(void *pram)
 {

@@ -23,7 +23,7 @@ pthread_mutex_t glb_2_mutex;
 int race_glb_1=5;
 int race_glb_2=3;
 
-void* race_condition_001_1()
+void* race_condition_001_1(void *arg)
 {
 	while(1)
 	{
@@ -43,7 +43,7 @@ void* race_condition_001_1()
 	return NULL;
 }
 
-void* race_condition_001_2()
+void* race_condition_001_2(void *arg)
 {
 	while(1)
 	{
@@ -84,7 +84,7 @@ void race_condition_001()
 int race_condition_002_gbl=0;
 pthread_mutex_t mutex_count;
 
-void* race_condition_002_1()
+void* race_condition_002_1(void *arg)
 {
 	while(1)
 	{
@@ -129,7 +129,7 @@ void* mythread(void * data);
   pthread_mutex_t count_mutex =PTHREAD_MUTEX_INITIALIZER;
 
 /* Global variable which will be shared */
-int x=0;
+static int x=0;
 
 void race_condition_003()
 {

@@ -225,7 +225,7 @@ void littlemem_st_008_func_002 (int flag)
 		}
 		else if(flag == MAX_STR3)
 		{
-			littlemem_st_007_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
+			littlemem_st_008_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
 		}
 	    i++;
 	}
@@ -269,7 +269,7 @@ void littlemem_st_009_func_002 (int flag)
 		}
 		else if(flag == MAX_3)
 		{
-			littlemem_st_007_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
+			littlemem_st_009_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
 		}
 	    i++;
 	}while(i<2);
@@ -304,7 +304,7 @@ void littlemem_st_010_func_002 (int flag)
 {
 	goto label;
 	label:
-		littlemem_st_007_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
+		littlemem_st_010_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
 }
 
 void littlemem_st_010 ()
@@ -340,7 +340,7 @@ void littlemem_st_011_func_002 (int flag)
 	label:
 	while(i<2)
 	{
-		littlemem_st_007_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
+		littlemem_st_011_s_001_gbl_str->c = 1; /*Tool should detect this line as error*/ /*ERROR:Little Memory or Overflow*/
 	    i++;
 	}
 }

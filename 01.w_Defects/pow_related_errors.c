@@ -20,6 +20,9 @@
 * Complexity: Very high values of number and exponent results in overflow of the answer
 */
 
+// TODO: fix many issues in this file. Notably, some exponents seem to not make much sense, and
+// confusion seems to exist between pow() (exponentiation) and ^ (bitwise xor on integers)
+
 void pow_related_errors_001()
 {
 

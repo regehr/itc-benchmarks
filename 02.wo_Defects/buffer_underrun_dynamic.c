@@ -719,7 +719,7 @@ void dynamic_buffer_underrun_037()
 	    	doubleptr[i]=(char*) malloc(10*sizeof(char));/*Tool should Not detect this line as error*/ /*No ERROR:Buffer Underrun*/
 	    	if(doubleptr[i]!=NULL)
 	    	{
-	    	    doubleptr[0][0]='T';
+	    	    doubleptr[i][0]='T';
 			    free(doubleptr[i]);
 	    	}
 	    }

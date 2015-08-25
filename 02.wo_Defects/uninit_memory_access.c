@@ -318,7 +318,7 @@ void uninit_memory_access_010 ()
 enum {max_buffer = 24};
 
 void uninit_memory_access_011_func_001 (const char *msg) {
-  const char *error_log = msg;
+  char *error_log = (char *)msg;
   char buffer[max_buffer];
 
   snprintf(buffer, sizeof(buffer), "Error: %s", error_log);

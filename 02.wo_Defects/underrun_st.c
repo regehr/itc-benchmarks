@@ -112,7 +112,7 @@ void underrun_st_008 ()
 	for (i = 0; i < 5; i ++)
 	{
 		*p = 1; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
-		p --;
+                if (i < 4) p --;
 	}
 }
 
@@ -143,7 +143,7 @@ void underrun_st_010 ()
 	for (i = 0; i < 5; i ++)
 	{
 		*p = 1; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
-		p --;
+                if (i < 4) p --;
 	}
 }
 
@@ -175,7 +175,7 @@ void underrun_st_012 ()
 	while(i > -1)
 	{
 		*p = 1; /*Tool should not detect this line as error*/ /*No ERROR:Data Underrun*/
-		p --;
+                if (i > 0) p --;
 		i--;
 	}
 }

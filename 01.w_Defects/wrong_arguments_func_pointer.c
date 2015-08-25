@@ -550,7 +550,7 @@ void wrong_arguments_func_pointer_018_func_001(wrong_arguments_func_pointer_018_
 {
     memset(st, 0, sizeof(*st));
     st->a = 1;
-    func_pointer_018_global_set = 1;
+    func_pointer_018_global_set = 10;
 }
 
 void wrong_arguments_func_pointer_018_func_002(wrong_arguments_func_pointer_018_s_001 st,wrong_arguments_func_pointer_018_s_001* st1)

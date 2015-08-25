@@ -65,7 +65,7 @@ void data_lost_004 ()
 void data_lost_005 ()
 {
 	long ret;
-	float a = 2.14748365e+09F; /* 0x80000000 */
+        float a = 9.223372036854775808e+18F; /* 0x8000000000000000 */
 	ret = a;/*Tool should detect this line as error*/ /*ERROR:Integer precision lost because of cast*/
         sink = ret;
 }

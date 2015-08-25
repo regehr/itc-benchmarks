@@ -32,7 +32,7 @@ void uninit_memory_access_001 ()
 */
 void uninit_memory_access_002 ()
 {
-	double *a = (double *) calloc(3,sizeof(double));
+	double *a = (double *) malloc(3*sizeof(double));
 	if(a!=NULL)
 	{
 	printf("%lf ",a[1]);/*Tool should detect this line as error*/ /*ERROR:Uninitialized Memory Access*/
@@ -63,7 +63,7 @@ void uninit_memory_access_003 ()
 void uninit_memory_access_004 ()
 {
 	short **ptr = NULL;
-	short *p1 = (short *) calloc(10,sizeof(short));
+	short *p1 = (short *) malloc(10*sizeof(short));
 	short *p2 = NULL;
 	if(p1 !=NULL)
 	{

@@ -62,7 +62,7 @@ void deletion_of_data_structure_sentinel_003()
 	memcpy(str,ptr,11);/*Tool should Not detect this line as error*/ /*No ERROR:Deletion of a data structure sentinel*/
 }
 
-extern int vflag;
+extern volatile int vflag;
 void deletion_of_data_structure_sentinel_main()
 {
 	if (vflag ==1 || vflag ==888)

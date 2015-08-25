@@ -190,6 +190,7 @@ void free_null_pointer_007()
 {
 	int flag=0,i,j;
 	free_null_pointer_007_gbl_doubleptr=NULL;
+        // TODO: goto jumps past line with error so it does not actually execute
 goto label;
 
     if(free_null_pointer_007_func_001(flag)!=ZERO)
@@ -272,6 +273,7 @@ void free_null_pointer_009 ()
     free_null_pointer_009_func_001();
     for(i=0;i<5;i++)
     {
+        // TODO: this line dereferences a null pointer and program crashes before reaching line with error
     	strcpy (free_null_pointer_009dst[i],"STRING");
     }
 	while(1)
@@ -317,6 +319,7 @@ void free_null_pointer_010_func_002(char **dst, char (*src)[15])
 	int i;
 	for(i=0;i<5;i++)
 	{
+        // TODO: this line dereferences a null pointer and program crashes before reaching line with error
 	   strcpy(*(dst+i),src[i]);
 	}
 }
@@ -449,7 +452,7 @@ void free_null_pointer_012 ()
     if (free_null_pointer_012_func_001(0) == ZERO && MAX ==1)
     {
     	if(flag == 10)
-    	a = *(ptr+1);
+    	a = *(ptr+1); // TODO: this line dereferences a null pointer and program crashes before reaching line with error
     }
 
     if (free_null_pointer_012_func_001(0) == ZERO && MAX ==1)
@@ -480,6 +483,7 @@ void free_null_pointer_013 ()
 		{
 	       fptr = (double *)calloc(10, sizeof(double));
 		}
+            // TODO: this line dereferences a null pointer and program crashes before reaching line with error
 	    *(fptr+3) = 50.5;
 	    *fp1 = fptr;
 	    i++;
@@ -527,6 +531,7 @@ void free_null_pointer_014_func_002(int flag)
    {
 	   for (i=0;i<1;i++)
 	   {
+                   // TODO: this line dereferences a null pointer and program crashes before reaching line with error
 		   *(free_null_pointer_014_gbl_s->p1) = arr[0];
 		   *(free_null_pointer_014_gbl_s->p2) = arr[1];
 		   *(free_null_pointer_014_gbl_s->p3) = arr[2];

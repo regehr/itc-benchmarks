@@ -14,6 +14,7 @@
 #include <ctype.h>
 #include <unistd.h>
 #include <limits.h>
+#include <stdint.h>
 
 extern int idx, sink;
 extern double dsink;

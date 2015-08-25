@@ -277,6 +277,7 @@ void null_pointer_016()
 {
 	int flag=0,i,j;
 	null_pointer_016_gbl_doubleptr=NULL;
+// TODO: goto jumps past line with error so it does not actually execute
 goto label;
 
     if(null_pointer_016_func_001(flag)==ZERO)

@@ -9,6 +9,7 @@
 */
 
 static int sink;
+static double dsink;
 
 #include "HeaderFile.h"
 int rand (void);
@@ -95,7 +96,7 @@ void data_overflow_007 ()
 	unsigned int max = 0xfffffffe;
 	unsigned int ret;
 	ret = max + 1;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
-        sink = ret;
+        dsink = ret;
 }
 
 /*
@@ -107,7 +108,7 @@ void data_overflow_008 ()
 	unsigned long max = 0xfffffffe;
 	unsigned long ret;
 	ret = max + 1;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
-        sink = ret;
+        dsink = ret;
 }
 
 /*
@@ -333,7 +334,7 @@ void data_overflow_024 ()
 
 	/* 0 11100111 00000000000000000000000 */
 	ret = max + 2.02824096e+31F;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
-        sink = ret;
+        dsink = ret;
 }
 
 /*
@@ -349,7 +350,7 @@ void data_overflow_025 ()
 
 	/* 0 11111001010 0000000000000000000000000000000000000000000000000000 */
 	ret = max + 1.9958403095347198e+292;/*Tool should Not detect this line as error*/ /*No ERROR:Data Overflow*/
-        sink = ret;
+        dsink = ret;
 }
 
 /*

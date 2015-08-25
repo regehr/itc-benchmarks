@@ -299,7 +299,7 @@ void uninit_pointer_014_func_001 (int flag)
 	{
 		case 1:
 		{
-			s = (uninit_pointer_014_s_001 *)calloc(1,sizeof(uninit_pointer_014_s_001));
+			s = (uninit_pointer_014_s_001 *)malloc(sizeof(uninit_pointer_014_s_001));
 			if(s!=NULL)
 			{
 				s->a = 10;
@@ -309,7 +309,7 @@ void uninit_pointer_014_func_001 (int flag)
 		}
 		case 2:
 		{
-			s = (uninit_pointer_014_s_001 *)calloc(1,sizeof(uninit_pointer_014_s_001));
+			s = (uninit_pointer_014_s_001 *)malloc(sizeof(uninit_pointer_014_s_001));
 			if(s!=NULL)
 			{
 				s->a = 20;
