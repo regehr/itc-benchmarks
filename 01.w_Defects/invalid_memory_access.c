@@ -472,7 +472,6 @@ int invalid_memory_access_014 (int flag)
 	}
 	if(ptr!=NULL)
 	{
-                // TODO: goto jumps past line with error so it does not actually execute
    		goto my_label2;
 my_label3:
         ret = ptr[2];/*Tool should detect this line as error*/ /*ERROR:Invalid memory access to already freed area*/
