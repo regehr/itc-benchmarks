@@ -298,7 +298,7 @@ void null_pointer_016()
 	int flag=0,i,j;
 	null_pointer_016_gbl_doubleptr=NULL;
 goto label;
-
+label2:
     if(null_pointer_016_func_001(flag)==ZERO)
 	{
 		for(i=0;i<10;i++)
@@ -313,12 +313,13 @@ goto label;
 	    free(null_pointer_016_gbl_doubleptr);
 	    null_pointer_016_gbl_doubleptr = NULL;
 	}
-
+    return;
 label:
     	if(null_pointer_016_func_001(flag)==ZERO)
     	{
     		null_pointer_016_func_002();
     	}
+goto label2;
 }
 
 /*

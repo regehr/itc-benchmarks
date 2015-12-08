@@ -471,6 +471,7 @@ void memory_leak_0017()
 	memory_leak_0017_gbl_doubleptr=NULL;
 goto label;
 
+label2:
     if(memory_leak_0017_func_001(flag)==ZERO)
 	{
 		for(i=0;i<10;i++)
@@ -485,12 +486,13 @@ goto label;
 	    free(memory_leak_0017_gbl_doubleptr);
 	    memory_leak_0017_gbl_doubleptr = NULL;
 	}
-
+    return;
 label:
     	if(memory_leak_0017_func_001(flag)==ZERO)
     	{
     		memory_leak_0017_func_002();
     	}
+goto label2;
 }
 
 /*

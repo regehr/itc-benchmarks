@@ -59,6 +59,7 @@ void invalid_extern_006 ()
 {
 	invalid_extern_001_glb_006_str = (invalid_extern_001_glb_006_s_001 *) malloc(1*sizeof(invalid_extern_001_glb_006_s_001));
 	invalid_extern_001_glb_006_str->csr = 10;
+        free(invalid_extern_001_glb_006_str);
 }
 
 /* #endif ! (defined(CHECKER_POLYSPACE) || defined(CHECKER_VARVEL)) */

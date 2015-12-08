@@ -549,7 +549,7 @@ void memory_allocation_failure_014 ()
 	char  **dptr,a = 0;
 	double *ptr,b;
 	int i,j;
-	static int staticflag=10;
+	static int staticflag=1;
     if (staticflag == 10)
     {
     	  	ptr= (double*) malloc(10*sizeof(double));

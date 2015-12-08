@@ -76,9 +76,9 @@ void memory_allocation_failure_003 ()
 	for(i=0;i<MAX;i++)
 		ptr[i]=(unsigned int*) malloc(MAX_VAL*sizeof(unsigned int)); /*Tool should not detect this line as error*/ /*No ERROR:Memory allocation failure */
 
-	for(i=0;i<5;i++)
+	for(i=0;i<MAX;i++)
 	{
-		for(j=0;j<5;j++)
+		for(j=0;j<MAX_VAL;j++)
 		{
 			*(*(ptr+i)+j)=i;
 		}
@@ -274,14 +274,15 @@ char * memory_allocation_failure_008_func_001 (const char *msg) {
 void memory_allocation_failure_008 ()
 {
 	char *str = "STRINGMEM";
-	memory_allocation_failure_008_func_001(str);
+	char *buf = memory_allocation_failure_008_func_001(str);
+        free(buf);
 }
 
 /*
 * Type of defect: memory_allocation_failure - Memory could not be allocated / insufficient memory
 * Complexity: When using a pointer to char in a do ~ while loop and memory allocate and returned to another function ,
 */
-#define MAX_BUFFER (429496728UL)
+#define MAX_BUFFER (214748364UL)
 
 void memory_allocation_failure_009_func_001 (char * buf)
 {
@@ -305,7 +306,7 @@ void memory_allocation_failure_009_func_002 (void * vptr)
 
 void memory_allocation_failure_009 ()
 {
-    void *buf1;
+    char *buf1;
 	buf1 = "String Test123";
     memory_allocation_failure_009_func_002(&buf1);
 }
@@ -681,6 +682,7 @@ void memory_allocation_failure_015 ()
     int flag;
     flag = memory_allocation_failure_015_func_003(1);
     printf("%d",flag);
+    free(memory_allocation_failure_015_gbl_ptr);
 }
 
 /*

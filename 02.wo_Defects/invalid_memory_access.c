@@ -536,7 +536,7 @@ void invalid_memory_access_015 ()
         {
             char * str;
             str = invalid_memory_access_015_func_001(buf[j]);
-            psink = str;
+            free(str);
         }
     }
 }

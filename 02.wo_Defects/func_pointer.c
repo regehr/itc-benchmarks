@@ -130,7 +130,7 @@ void func_pointer_004 ()
             char *(*fptr)(char *);
             fptr = func_pointer_004_func_001; 
             str = fptr(buf[j]);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
-            psink = str;
+            free(str);
         }
     }
 }
@@ -439,7 +439,7 @@ void func_pointer_011 ()
             fptr1 = fptr;
             fptr2 = fptr1;
             str = fptr2(buf[j]);/*Tool should not detect this line as error*/ /*No ERROR:Bad function pointer casting*/
-            psink = str;
+            free(str);
         }
     }
  }
@@ -631,6 +631,7 @@ void func_pointer_015 ()
 	void (*fptr3)(func_pointer_015_s_001* st1);
 	fptr3 = func_pointer_015_func_004;
 	fptr3(st1);
+        free(st1);
 }
 
 /*
