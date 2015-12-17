@@ -132,7 +132,8 @@ void lock_never_unlock_002_tskentry_001 ()
  * Types of defects: Lock But Never Unlock
  * Complexity: Lock But Never Unlock over multiple functions , 2 threads
  */
-pthread_mutex_t lock_never_unlock_003_glb_mutex = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t lock_never_unlock_003_glb_mutex_1 = PTHREAD_MUTEX_INITIALIZER;
+pthread_mutex_t lock_never_unlock_003_glb_mutex_2 = PTHREAD_MUTEX_INITIALIZER;
 
 #if defined(CHECKER_POLYSPACE)
 void lock_never_unlock_003_glb_mutex_lock () {}
@@ -144,7 +145,7 @@ float lock_never_unlock_003_glb_data = 1000.0;
 void lock_never_unlock_003_func_001 (void *pram)
 {
 #if ! defined(CHECKER_POLYSPACE)
-    pthread_mutex_lock (&lock_never_unlock_003_glb_mutex);
+    pthread_mutex_lock (&lock_never_unlock_003_glb_mutex_1);
     lock_never_unlock_003_glb_data = (lock_never_unlock_003_glb_data) + 1.2;
     /*Tool should detect this line as error*/ /* ERROR:Lock Never Unlock */
 #if defined PRINT_DEBUG
@@ -158,10 +159,10 @@ void* lock_never_unlock_003_tsk_001 (void *pram)
 {
 #if ! defined(CHECKER_POLYSPACE)
 
-	pthread_mutex_lock(&lock_never_unlock_003_glb_mutex);
+	pthread_mutex_lock(&lock_never_unlock_003_glb_mutex_2);
 	lock_never_unlock_003_glb_data = (lock_never_unlock_003_glb_data) + 3.5;
 	lock_never_unlock_003_func_001(pram);
-	pthread_mutex_unlock(&lock_never_unlock_003_glb_mutex);
+	pthread_mutex_unlock(&lock_never_unlock_003_glb_mutex_2);
 #endif /* defined(CHECKER_POLYSPACE) */
 	return NULL;
 }
@@ -171,12 +172,14 @@ void lock_never_unlock_003 ()
 #if ! defined(CHECKER_POLYSPACE)
 	pthread_t tid1,tid2;
 	intptr_t t1 = 10, t2 = 20;
-	pthread_mutex_init(&lock_never_unlock_003_glb_mutex, NULL);
+	pthread_mutex_init(&lock_never_unlock_003_glb_mutex_1, NULL);
+	pthread_mutex_init(&lock_never_unlock_003_glb_mutex_2, NULL);
 	pthread_create(&tid1, NULL, lock_never_unlock_003_tsk_001, (void *)t1);
 	pthread_create(&tid2, NULL, lock_never_unlock_003_tsk_001, (void *)t2);
 	pthread_join(tid1, NULL);
 	pthread_join(tid2, NULL);
-	pthread_mutex_destroy(&lock_never_unlock_003_glb_mutex);
+	pthread_mutex_destroy(&lock_never_unlock_003_glb_mutex_1);
+	pthread_mutex_destroy(&lock_never_unlock_003_glb_mutex_2);
 #endif /* defined(CHECKER_POLYSPACE) */
 }
 

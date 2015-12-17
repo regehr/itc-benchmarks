@@ -42,7 +42,6 @@ void * st_cross_thread_access_001_tsk_001 (void *pram)
 	char * th = (char *)pram;
 	int arr[10];
 	arr[0] = 10;
-	*st_cross_thread_access_001_glb_ptr = 200;
 	pthread_mutex_lock(&st_cross_thread_access_001_glb_mutex);
 	st_cross_thread_access_001_glb_ptr = arr;
 	st_cross_thread_access_001_glb_data = (st_cross_thread_access_001_glb_data % 100) + 1;
@@ -424,7 +423,7 @@ void * st_cross_thread_access_005_tsk_002 (void *pram)
 void st_cross_thread_access_005 ()
 {
 #if !defined(CHECKER_POLYSPACE)
-	if (st_cross_thread_access_005_thread_set == NO_THREAD)
+	if (st_cross_thread_access_005_thread_set != NO_THREAD)
 	{
 		;
 	}

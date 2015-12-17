@@ -224,6 +224,8 @@ void double_lock_004 ()
 	   long int t2 = 20;
 	   sink += pthread_create(&th1, NULL, Thread3, (void *)t1);
 	   sink += pthread_create(&th2, NULL, Thread4, (void *)t2);
+           pthread_join(th1, NULL);
+           pthread_join(th2, NULL);
 #endif /* defined(CHECKER_POLYSPACE) */
 }
 

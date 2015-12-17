@@ -16,6 +16,11 @@
 
 #include "HeaderFile.h"
 
+//TODO: this isn't really livelock. Livelock is a condition where progress is
+// supposed to occur but is never actually made due to the configuration of locking.
+// This is an algorithm which can loop forever or which can deadlock, depending
+// on the interleaving of threads.
+
 pthread_mutex_t livelock_001_glb_A;
 pthread_mutex_t livelock_001_glb_B;
 
@@ -38,7 +43,7 @@ void *mythreadA(void *pram)
     return NULL;
 }
 
-void* mythreadB()
+void* mythreadB(void *arg)
 {
 	while(1)
 	{
