@@ -225,9 +225,9 @@ void uninit_pointer_011 ()
     unsigned int * ptr = NULL,a=0;
     ptr = (unsigned int *)malloc(10*sizeof(unsigned int *));
     int i;
-	if (ptr!=NULL)
-	{
-		while(1)
+    if (ptr!=NULL)
+    {
+       while(1)
        {
            for(i=0; i<10; i++)
            {
@@ -243,7 +243,8 @@ void uninit_pointer_011 ()
           }
           break;
        }
-	}
+   }
+   free(ptr);
 }
 
 /*
