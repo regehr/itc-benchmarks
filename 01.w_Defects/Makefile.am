@@ -1,6 +1,7 @@
 AM_CPPFLAGS = -I$(top_srcdir)/include
 AM_CFLAGS = -pthread
 AM_LDFLAGS = -lm
+LDADD = -lm
 bin_PROGRAMS = 01_w_Defects
 01_w_Defects_SOURCES = \
 HeaderFile.h \
