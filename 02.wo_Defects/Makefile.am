@@ -1,6 +1,7 @@
 AM_CPPFLAGS = -I$(top_srcdir)/include
 AM_CFLAGS = -pthread
 AM_LDFLAGS = -lm
+LDADD = -lm
 bin_PROGRAMS = 02_wo_Defects
 02_wo_Defects_SOURCES = \
 bit_shift.c				lock_never_unlock.c \
