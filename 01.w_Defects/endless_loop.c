@@ -17,6 +17,7 @@
 void endless_loop_001 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	int i;
 	for (i = 0; ; i ++)
@@ -34,6 +35,7 @@ void endless_loop_001 ()
 void endless_loop_002 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	int i;
 	for (i = 0; i < 10; )
@@ -51,6 +53,7 @@ void endless_loop_002 ()
 void endless_loop_003 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	while (1)
 	{
@@ -67,6 +70,7 @@ void endless_loop_003 ()
 void endless_loop_004 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	int flag = 1;
 	while (flag)
@@ -89,6 +93,7 @@ int endless_loop_005_func_001 ()
 void endless_loop_005 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	while (endless_loop_005_func_001())
 	{
@@ -105,6 +110,7 @@ void endless_loop_005 ()
 void endless_loop_006_func_001 (int flag)
 {
 	int ret;
+	int sink;
 	int a = 0;
 	while (flag)
 	{
@@ -126,6 +132,7 @@ void endless_loop_006 ()
 void endless_loop_007 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	int flag = 1;
 	while (flag > 0)
@@ -143,6 +150,7 @@ void endless_loop_007 ()
 void endless_loop_008 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	int flag = 0;
 	while (flag == 0)
@@ -160,6 +168,7 @@ void endless_loop_008 ()
 void endless_loop_009 ()
 {
 	int ret;
+	int sink;
 	int a = 0;
 	do
 	{
