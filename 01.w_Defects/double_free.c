@@ -20,6 +20,8 @@ void double_free_001()
 	free(ptr);
 
 	free(ptr); /*Tool should detect this line as error*/ /*ERROR:Double free*/
+	free(ptr);
+	free(ptr);
 }
 
 /*
