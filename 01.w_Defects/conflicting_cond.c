@@ -21,7 +21,7 @@ void conflicting_cond_001 ()
 	int ret;
 
 	a = rand();
-	if ((a == 0) && (a == 1))/*Tool should detect this line as error*/ /*ERROR:contradict condition*/
+	if ((a == 0) && (a == 2))
 	{
 		b += a;
 	}
