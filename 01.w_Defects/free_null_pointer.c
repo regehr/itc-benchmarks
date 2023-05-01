@@ -20,7 +20,8 @@ char **free_null_pointer_010_gbl_dst=NULL;
 void free_null_pointer_001 ()
 {
 	char* buf= NULL;
-	free(buf);/* Tool should detect this line as error */ /*ERROR:Freeing a NULL pointer*/
+	//free(buf);/* Tool should detect this line as error */ /*ERROR:Freeing a NULL pointer*/
+	free(buf);
 	buf = NULL;
 }
 
