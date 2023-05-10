@@ -55,6 +55,9 @@ void memory_leak_002 ()
 	    free(ptr[i]);
 	}
 	free(ptr);
+	free(ptr);
+	//another one
+	free(ptr);
 }
 
 /*
